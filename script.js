@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Coordinate space: 420×300 matching SVG viewBox
     const scattered = [
-      {x:255, y:10},  {x:355, y:58},  {x:358, y:155},
-      {x:262, y:248}, {x:138, y:252}, {x:42,  y:162}, {x:58, y:58}
+      {x:285, y:5},   {x:372, y:88},  {x:318, y:215},
+      {x:160, y:262}, {x:28,  y:220}, {x:8,   y:75},  {x:130, y:12}
     ];
     const organized  = nodes.map((_, i) => ({ x: 8,  y: 12 + i * 40 }));
     const leadsPos   = { x: 339, y: 102 };
@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // STEP 1: Show channels scattered
     function step1() {
       clearSvg();
+      saStage.classList.remove('sa--organised');
       saLeads.style.opacity = '0';
       saLeads.style.transform = 'scale(1)';
       saLeads.style.left = leadsPos.x + 'px';
@@ -154,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // STEP 3: Slide to column, show leads, draw fan lines
     function step3() {
       clearSvg();
+      saStage.classList.add('sa--organised');
       nodes.forEach((n, i) => {
         n.style.transition = 'left 0.65s cubic-bezier(0.4,0,0.2,1), top 0.65s cubic-bezier(0.4,0,0.2,1)';
         n.style.left = organized[i].x + 'px';
@@ -194,11 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // STEP 5: Animate bar chart — PAUSES
     function step5() {
-      document.querySelectorAll('.sa__bar-fill').forEach(bar => {
-        bar.style.setProperty('--w-final', bar.dataset.w);
-        setTimeout(() => bar.classList.add('go'), 80);
-      });
-      document.querySelectorAll('.sa__bar-val').forEach(el => {
+      // Animate counters
+      document.querySelectorAll('.sa__kpi-val').forEach(el => {
         const from = parseInt(el.dataset.from), to = parseInt(el.dataset.to);
         const suffix = el.dataset.suffix || '', dur = 1200, t0 = performance.now();
         (function tick(now) {
@@ -207,7 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
           if (p < 1) requestAnimationFrame(tick);
         })(performance.now());
       });
-      // Animation ends here — no loop
+      // SVG bars grow from bottom
+      document.querySelectorAll('.sa__sb').forEach((bar, i) => {
+        setTimeout(() => {
+          const h = parseInt(bar.dataset.h);
+          bar.setAttribute('y', 40 - h);
+          bar.setAttribute('height', h);
+        }, 60 + i * 50);
+      });
     }
 
     // Start
