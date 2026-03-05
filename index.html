@@ -71,93 +71,126 @@
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero__inner">
-      <div class="hero__text">
-        <div class="hero__tag fade-up">Consultoría de Ventas B2B</div>
-        <h1 class="hero__h1 fade-up delay-1">
-          ¿Tu producto <em>es la leche?</em>
-        </h1>
-        <p class="hero__sub fade-up delay-4">
-          Te ayudo a desarrollar la estrategia de ventas que está a la altura.
-        </p>
-        <div class="hero__stats fade-up delay-5">
-          <div class="stat">
-            <div class="stat__num"><span class="counter" data-to="30">0</span>+</div>
-            <div class="stat__label">Startups y PYMEs</div>
-          </div>
-          <div class="stat__divider"></div>
-          <div class="stat">
-            <div class="stat__num"><span class="counter" data-to="180">0</span>+</div>
-            <div class="stat__label">Personas lideradas</div>
-          </div>
-          <div class="stat__divider"></div>
-          <div class="stat">
-            <div class="stat__num"><span class="counter" data-to="6">0</span></div>
-            <div class="stat__label">Mercados europeos</div>
-          </div>
+      <div class="hero__tag fade-up">Consultoría de Ventas B2B</div>
+
+      <div class="hero__row">
+        <!-- Left: Headlines -->
+        <div class="hero__headlines">
+          <h1 class="hero__h1 fade-up delay-1">¿Tu producto <em>es la leche?</em></h1>
+          <p class="hero__sub">Te ayudo a desarrollar la estrategia de ventas que está a la altura.</p>
         </div>
-        <div class="hero__btns fade-up delay-5">
-          <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="btn btn-primary">Café virtual gratuito</a>
-          <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+
+        <!-- Right: Animation -->
+        <div class="hero__visual fade-up delay-2" aria-hidden="true">
+          <div class="sa" id="sa">
+            <!-- Phase 1: Channels scattered → organised -->
+            <div class="sa__phase" id="saP1">
+              <div class="sa__lbl" id="saLbl1">Canales de captación</div>
+              <div class="sa__stage" id="saStage">
+                <!-- SVG for lines -->
+                <svg class="sa__svg" id="saSvg" viewBox="0 0 420 300" preserveAspectRatio="xMidYMid meet"></svg>
+
+                <!-- Channel nodes (positioned by JS) -->
+                <div class="sa__node" id="san0">
+                  <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12" rx="1"/><circle cx="4" cy="4" r="2.2"/></svg>
+                  <span>LinkedIn</span>
+                </div>
+                <div class="sa__node" id="san1">
+                  <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M2 7l10 7 10-7"/></svg>
+                  <span>Email</span>
+                </div>
+                <div class="sa__node" id="san2">
+                  <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>
+                  <span>Teléfono</span>
+                </div>
+                <div class="sa__node" id="san3">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v5M9.5 11h5"/><path d="M7 21l3-7h4l3 7"/><path d="M9.5 17h5"/></svg>
+                  <span>Eventos</span>
+                </div>
+                <div class="sa__node" id="san4">
+                  <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.4 13.4l7.2 4.2M15.6 6.6L8.4 10.6"/></svg>
+                  <span>RRSS</span>
+                </div>
+                <div class="sa__node" id="san5">
+                  <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M19.5 19.5l-3.7-3.7"/><path d="M7.5 13l2-2.5 1.5 1.5 2-3"/></svg>
+                  <span>SEO</span>
+                </div>
+                <div class="sa__node" id="san6">
+                  <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M7 7h3v6H7zM14 7h3l-3 6h3"/></svg>
+                  <span>SEM</span>
+                </div>
+
+                <!-- Leads node -->
+                <div class="sa__leads" id="saLeads">
+                  <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.74"/></svg>
+                  <span>Leads</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 2: Bar chart -->
+            <div class="sa__phase sa__phase--out" id="saP2">
+              <div class="sa__lbl">Informe de ventas mensual</div>
+              <div class="sa__chart" id="saChart">
+                <div class="sa__bar-row">
+                  <div class="sa__bar-meta">
+                    <span class="sa__bar-name">MRR</span>
+                    <span class="sa__bar-val" data-from="18" data-to="54" data-suffix="K">18K</span>
+                  </div>
+                  <div class="sa__bar-track"><div class="sa__bar-fill sa__bar--orange" data-w="88"></div></div>
+                  <span class="sa__bar-delta sa__delta--up">+200%</span>
+                </div>
+                <div class="sa__bar-row">
+                  <div class="sa__bar-meta">
+                    <span class="sa__bar-name">Margen</span>
+                    <span class="sa__bar-val" data-from="22" data-to="61" data-suffix="%">22%</span>
+                  </div>
+                  <div class="sa__bar-track"><div class="sa__bar-fill sa__bar--orange" data-w="75"></div></div>
+                  <span class="sa__bar-delta sa__delta--up">+39pp</span>
+                </div>
+                <div class="sa__bar-row">
+                  <div class="sa__bar-meta">
+                    <span class="sa__bar-name">CAC</span>
+                    <span class="sa__bar-val" data-from="980" data-to="340" data-suffix="€">980€</span>
+                  </div>
+                  <div class="sa__bar-track"><div class="sa__bar-fill sa__bar--green" data-w="35"></div></div>
+                  <span class="sa__bar-delta sa__delta--down">−65%</span>
+                </div>
+                <div class="sa__bar-row">
+                  <div class="sa__bar-meta">
+                    <span class="sa__bar-name">Payback</span>
+                    <span class="sa__bar-val" data-from="14" data-to="5" data-suffix="m">14m</span>
+                  </div>
+                  <div class="sa__bar-track"><div class="sa__bar-fill sa__bar--green" data-w="36"></div></div>
+                  <span class="sa__bar-delta sa__delta--down">−9 meses</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- ANIMATED SALES VISUAL -->
-      <div class="hero__visual fade-up delay-2" aria-hidden="true">
-        <div class="sales-anim" id="salesAnim">
-
-          <!-- FASE 1: Canales -->
-          <div class="anim-phase" id="phase1">
-            <div class="anim__label">Canales de captación</div>
-            <div class="channels">
-              <div class="channel" style="--a:0deg;   --d:0.2s"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span></div>
-              <div class="channel" style="--a:51deg;  --d:0.4s"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email</span></div>
-              <div class="channel" style="--a:102deg; --d:0.6s"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.79 19.79 19.79 0 01.1 1.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>Teléfono</span></div>
-              <div class="channel" style="--a:153deg; --d:0.8s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg><span>Eventos</span></div>
-              <div class="channel" style="--a:204deg; --d:1.0s"><svg viewBox="0 0 24 24"><path d="M21 2H3v16h5v4l4-4h9V2z"/><path d="M7 10h10M7 6h10M7 14h5"/></svg><span>RRSS</span></div>
-              <div class="channel" style="--a:255deg; --d:1.2s"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>SEO</span></div>
-              <div class="channel" style="--a:306deg; --d:1.4s"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2l2 5 2-8 2 5h2"/></svg><span>SEM</span></div>
-              <!-- centre node -->
-              <div class="channel-center">
-                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                <span>Leads</span>
-              </div>
-            </div>
-            <!-- connecting lines drawn by JS/CSS -->
-            <svg class="channel-lines" id="channelLines" viewBox="0 0 360 240"></svg>
-          </div>
-
-          <!-- FASE 2: Informe de métricas -->
-          <div class="anim-phase anim-phase--hidden" id="phase2">
-            <div class="anim__label">Resultados tras la consultoría</div>
-            <div class="metrics-grid">
-              <div class="metric-card metric-card--up">
-                <div class="metric-card__name">MRR</div>
-                <div class="metric-card__val" data-from="18" data-to="54" data-suffix="K">18K</div>
-                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:30%"></div><div class="metric-card__bar metric-card__bar--after" style="--pct:90%"></div></div>
-                <div class="metric-card__delta">+200%</div>
-              </div>
-              <div class="metric-card metric-card--up">
-                <div class="metric-card__name">Margen</div>
-                <div class="metric-card__val" data-from="22" data-to="61" data-suffix="%">22%</div>
-                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:36%"></div><div class="metric-card__bar metric-card__bar--after" style="--pct:100%"></div></div>
-                <div class="metric-card__delta">+39pp</div>
-              </div>
-              <div class="metric-card metric-card--down">
-                <div class="metric-card__name">CAC</div>
-                <div class="metric-card__val" data-from="980" data-to="340" data-suffix="€">980€</div>
-                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:100%"></div><div class="metric-card__bar metric-card__bar--after metric-card__bar--green" style="--pct:35%"></div></div>
-                <div class="metric-card__delta metric-card__delta--green">-65%</div>
-              </div>
-              <div class="metric-card metric-card--down">
-                <div class="metric-card__name">Payback</div>
-                <div class="metric-card__val" data-from="14" data-to="5" data-suffix="m">14m</div>
-                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:100%"></div><div class="metric-card__bar metric-card__bar--after metric-card__bar--green" style="--pct:36%"></div></div>
-                <div class="metric-card__delta metric-card__delta--green">-9 meses</div>
-              </div>
-            </div>
-          </div>
-
+      <!-- Stats -->
+      <div class="hero__stats fade-up">
+        <div class="stat">
+          <div class="stat__num"><span class="counter" data-to="30">0</span>+</div>
+          <div class="stat__label">Negocios impulsados</div>
         </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <div class="stat__num"><span class="counter" data-to="200">0</span>+</div>
+          <div class="stat__label">Vendedores formados</div>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <div class="stat__num">+<span class="counter" data-to="9">0</span></div>
+          <div class="stat__label">Mercados trabajados</div>
+        </div>
+      </div>
+
+      <div class="hero__btns fade-up">
+        <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="btn btn-primary">Agenda 30 minutos conmigo</a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
       </div>
     </div>
     <div class="hero__scroll-hint">
