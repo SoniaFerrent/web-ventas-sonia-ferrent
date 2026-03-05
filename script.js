@@ -47,10 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeEls.forEach(el => observer.observe(el));
 
-  // Hero elements visible immediately
-  document.querySelectorAll('.hero .fade-up').forEach(el => {
-    setTimeout(() => el.classList.add('visible'), 100);
-  });
+  // Hero elements visible immediately with staggered timing
+  const heroTag = document.querySelector('.hero__tag');
+  const heroH1 = document.querySelector('.hero__h1');
+  const heroSub = document.querySelector('.hero__sub');
+  const heroVisual = document.querySelector('.hero__visual');
+  const heroStats = document.querySelector('.hero__stats');
+  const heroBtns = document.querySelector('.hero__btns');
+
+  if (heroTag) setTimeout(() => heroTag.classList.add('visible'), 200);
+  if (heroH1) setTimeout(() => heroH1.classList.add('visible'), 400);
+  if (heroVisual) setTimeout(() => heroVisual.classList.add('visible'), 500);
+  // Subtitle appears later — the key effect
+  if (heroSub) setTimeout(() => heroSub.classList.add('visible'), 1800);
+  if (heroStats) setTimeout(() => heroStats.classList.add('visible'), 2200);
+  if (heroBtns) setTimeout(() => heroBtns.classList.add('visible'), 2400);
 
   // ===========================
   // COUNTER ANIMATION

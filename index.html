@@ -73,39 +73,113 @@
     <div class="hero__inner">
       <div class="hero__text">
         <div class="hero__tag fade-up">Consultoría de Ventas B2B</div>
-        <h1 class="hero__h1">
-          <span class="fade-up delay-1">¿Tu producto</span>
-          <em class="fade-up delay-2">es la leche?</em>
+        <h1 class="hero__h1 fade-up delay-1">
+          ¿Tu producto <em>es la leche?</em>
         </h1>
-        <p class="hero__sub fade-up delay-3">
-          Te ayudo a desarrollar la estrategia de ventas<br>que está a la altura.
+        <p class="hero__sub fade-up delay-4">
+          Te ayudo a desarrollar la estrategia de ventas que está a la altura.
         </p>
-        <div class="hero__stats fade-up delay-4">
+        <div class="hero__stats fade-up delay-5">
           <div class="stat">
-            <b><span class="counter" data-to="30">0</span>+</b>
-            <span>Startups y PYMEs</span>
+            <div class="stat__num"><span class="counter" data-to="30">0</span>+</div>
+            <div class="stat__label">Startups y PYMEs</div>
           </div>
+          <div class="stat__divider"></div>
           <div class="stat">
-            <b><span class="counter" data-to="180">0</span>+</b>
-            <span>Personas lideradas</span>
+            <div class="stat__num"><span class="counter" data-to="180">0</span>+</div>
+            <div class="stat__label">Personas lideradas</div>
           </div>
+          <div class="stat__divider"></div>
           <div class="stat">
-            <b><span class="counter" data-to="6">0</span></b>
-            <span>Mercados europeos</span>
+            <div class="stat__num"><span class="counter" data-to="6">0</span></div>
+            <div class="stat__label">Mercados europeos</div>
           </div>
         </div>
         <div class="hero__btns fade-up delay-5">
-          <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="btn btn-primary">☕ Café virtual gratuito</a>
-          <a href="#servicios" class="btn btn-ghost">Ver servicios ↓</a>
+          <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="btn btn-primary">Café virtual gratuito</a>
+          <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
         </div>
       </div>
-      <div class="hero__img fade-up delay-2">
-        <div class="hero__blob"></div>
-        <img src="https://ventasconsoniaferrent.com/wp-content/uploads/2024/05/dsc00614-e1715836368478.jpg"
-             alt="Sonia Ferrer Rentero - Consultora de Ventas B2B en España">
-        <div class="hero__badge">
-          <span class="hero__badge-num">+30</span>
-          <span class="hero__badge-txt">empresas B2B</span>
+
+      <!-- ANIMATED SALES PIPELINE -->
+      <div class="hero__visual fade-up delay-2" aria-hidden="true">
+        <div class="pipeline">
+          <div class="pipeline__label">Pipeline de ventas B2B</div>
+          <div class="pipeline__stages">
+            <div class="pipeline__stage" style="--i:0">
+              <div class="stage__bar-wrap">
+                <div class="stage__bar" style="--h:85%"></div>
+              </div>
+              <div class="stage__dot"></div>
+              <div class="stage__name">Prospección</div>
+              <div class="stage__count">85</div>
+            </div>
+            <div class="pipeline__connector"></div>
+            <div class="pipeline__stage" style="--i:1">
+              <div class="stage__bar-wrap">
+                <div class="stage__bar" style="--h:62%"></div>
+              </div>
+              <div class="stage__dot"></div>
+              <div class="stage__name">Calificación</div>
+              <div class="stage__count">62</div>
+            </div>
+            <div class="pipeline__connector"></div>
+            <div class="pipeline__stage" style="--i:2">
+              <div class="stage__bar-wrap">
+                <div class="stage__bar" style="--h:44%"></div>
+              </div>
+              <div class="stage__dot"></div>
+              <div class="stage__name">Demo</div>
+              <div class="stage__count">44</div>
+            </div>
+            <div class="pipeline__connector"></div>
+            <div class="pipeline__stage" style="--i:3">
+              <div class="stage__bar-wrap">
+                <div class="stage__bar" style="--h:28%"></div>
+              </div>
+              <div class="stage__dot"></div>
+              <div class="stage__name">Propuesta</div>
+              <div class="stage__count">28</div>
+            </div>
+            <div class="pipeline__connector"></div>
+            <div class="pipeline__stage pipeline__stage--win" style="--i:4">
+              <div class="stage__bar-wrap">
+                <div class="stage__bar" style="--h:18%"></div>
+              </div>
+              <div class="stage__dot"></div>
+              <div class="stage__name">Cierre</div>
+              <div class="stage__count">18</div>
+            </div>
+          </div>
+          <div class="pipeline__metrics">
+            <div class="metric">
+              <span class="metric__val">21%</span>
+              <span class="metric__lbl">Tasa de cierre</span>
+            </div>
+            <div class="metric metric--highlight">
+              <span class="metric__val">x3.2</span>
+              <span class="metric__lbl">Crecimiento medio</span>
+            </div>
+            <div class="metric">
+              <span class="metric__val">38d</span>
+              <span class="metric__lbl">Ciclo de venta</span>
+            </div>
+          </div>
+          <!-- floating cards -->
+          <div class="float-card float-card--1">
+            <div class="float-card__icon">↑</div>
+            <div>
+              <div class="float-card__val">+68%</div>
+              <div class="float-card__lbl">Ingresos Q4</div>
+            </div>
+          </div>
+          <div class="float-card float-card--2">
+            <div class="float-card__icon">✓</div>
+            <div>
+              <div class="float-card__val">Cierre</div>
+              <div class="float-card__lbl">NeuralTrust</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
