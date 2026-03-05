@@ -64,8 +64,99 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroBtns) setTimeout(() => heroBtns.classList.add('visible'), 2400);
 
   // ===========================
-  // COUNTER ANIMATION
+  // SALES ANIMATION: Channels → Metrics
   // ===========================
+  function initSalesAnim() {
+    const phase1 = document.getElementById('phase1');
+    const phase2 = document.getElementById('phase2');
+    if (!phase1 || !phase2) return;
+
+    // Draw connecting lines from each channel to center
+    const svg = document.getElementById('channelLines');
+    const channels = document.querySelectorAll('.channel');
+    const container = document.querySelector('.channels');
+
+    function drawLines() {
+      if (!svg || !container) return;
+      svg.innerHTML = '';
+      const cr = container.getBoundingClientRect();
+      const cx = cr.width / 2;
+      const cy = cr.height / 2;
+
+      channels.forEach((ch, i) => {
+        const r = ch.getBoundingClientRect();
+        const x = r.left - cr.left + r.width / 2;
+        const y = r.top - cr.top + r.height / 2;
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+        line.setAttribute('x2', x);  line.setAttribute('y2', y);
+        line.classList.add('channel-line');
+        line.style.animationDelay = (0.2 + i * 0.15) + 's';
+        svg.appendChild(line);
+      });
+    }
+
+    // Draw after channels have animated in
+    setTimeout(drawLines, 600);
+
+    // Transition to phase 2 after 3.5s
+    setTimeout(() => {
+      phase1.style.opacity = '0';
+      phase1.style.transform = 'translateY(-16px)';
+      phase1.style.pointerEvents = 'none';
+
+      phase2.classList.remove('anim-phase--hidden');
+      phase2.style.opacity = '1';
+      phase2.style.transform = 'translateY(0)';
+
+      // Animate metric bars and counters
+      setTimeout(() => {
+        document.querySelectorAll('.metric-card__bar--after').forEach(bar => {
+          bar.classList.add('animate');
+        });
+
+        document.querySelectorAll('.metric-card__val').forEach(el => {
+          const from = parseInt(el.dataset.from);
+          const to   = parseInt(el.dataset.to);
+          const suffix = el.dataset.suffix || '';
+          const dur = 1400;
+          const start = performance.now();
+          function tick(now) {
+            const p = Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(from + (to - from) * eased) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      }, 200);
+
+      // Loop back to phase 1 after 5s
+      setTimeout(() => {
+        phase2.style.opacity = '0';
+        phase2.style.transform = 'translateY(16px)';
+        phase2.style.pointerEvents = 'none';
+
+        phase1.classList.remove('anim-phase--hidden');
+        phase1.style.opacity = '1';
+        phase1.style.transform = 'translateY(0)';
+        phase1.style.pointerEvents = '';
+
+        // Reset metric bars
+        document.querySelectorAll('.metric-card__bar--after').forEach(bar => bar.classList.remove('animate'));
+        document.querySelectorAll('.metric-card__val').forEach(el => {
+          el.textContent = el.dataset.from + (el.dataset.suffix || '');
+        });
+
+        // Restart loop
+        setTimeout(initSalesAnim, 500);
+      }, 5000);
+
+    }, 3500);
+  }
+
+  // Start animation after hero subtitle appears
+  setTimeout(initSalesAnim, 800);
   const counters = document.querySelectorAll('.counter');
 
   const counterObserver = new IntersectionObserver((entries) => {

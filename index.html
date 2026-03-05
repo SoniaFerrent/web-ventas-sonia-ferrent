@@ -101,85 +101,62 @@
         </div>
       </div>
 
-      <!-- ANIMATED SALES PIPELINE -->
+      <!-- ANIMATED SALES VISUAL -->
       <div class="hero__visual fade-up delay-2" aria-hidden="true">
-        <div class="pipeline">
-          <div class="pipeline__label">Pipeline de ventas B2B</div>
-          <div class="pipeline__stages">
-            <div class="pipeline__stage" style="--i:0">
-              <div class="stage__bar-wrap">
-                <div class="stage__bar" style="--h:85%"></div>
+        <div class="sales-anim" id="salesAnim">
+
+          <!-- FASE 1: Canales -->
+          <div class="anim-phase" id="phase1">
+            <div class="anim__label">Canales de captación</div>
+            <div class="channels">
+              <div class="channel" style="--a:0deg;   --d:0.2s"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span></div>
+              <div class="channel" style="--a:51deg;  --d:0.4s"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email</span></div>
+              <div class="channel" style="--a:102deg; --d:0.6s"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.79 19.79 19.79 0 01.1 1.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>Teléfono</span></div>
+              <div class="channel" style="--a:153deg; --d:0.8s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg><span>Eventos</span></div>
+              <div class="channel" style="--a:204deg; --d:1.0s"><svg viewBox="0 0 24 24"><path d="M21 2H3v16h5v4l4-4h9V2z"/><path d="M7 10h10M7 6h10M7 14h5"/></svg><span>RRSS</span></div>
+              <div class="channel" style="--a:255deg; --d:1.2s"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>SEO</span></div>
+              <div class="channel" style="--a:306deg; --d:1.4s"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2l2 5 2-8 2 5h2"/></svg><span>SEM</span></div>
+              <!-- centre node -->
+              <div class="channel-center">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                <span>Leads</span>
               </div>
-              <div class="stage__dot"></div>
-              <div class="stage__name">Prospección</div>
-              <div class="stage__count">85</div>
             </div>
-            <div class="pipeline__connector"></div>
-            <div class="pipeline__stage" style="--i:1">
-              <div class="stage__bar-wrap">
-                <div class="stage__bar" style="--h:62%"></div>
+            <!-- connecting lines drawn by JS/CSS -->
+            <svg class="channel-lines" id="channelLines" viewBox="0 0 360 240"></svg>
+          </div>
+
+          <!-- FASE 2: Informe de métricas -->
+          <div class="anim-phase anim-phase--hidden" id="phase2">
+            <div class="anim__label">Resultados tras la consultoría</div>
+            <div class="metrics-grid">
+              <div class="metric-card metric-card--up">
+                <div class="metric-card__name">MRR</div>
+                <div class="metric-card__val" data-from="18" data-to="54" data-suffix="K">18K</div>
+                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:30%"></div><div class="metric-card__bar metric-card__bar--after" style="--pct:90%"></div></div>
+                <div class="metric-card__delta">+200%</div>
               </div>
-              <div class="stage__dot"></div>
-              <div class="stage__name">Calificación</div>
-              <div class="stage__count">62</div>
-            </div>
-            <div class="pipeline__connector"></div>
-            <div class="pipeline__stage" style="--i:2">
-              <div class="stage__bar-wrap">
-                <div class="stage__bar" style="--h:44%"></div>
+              <div class="metric-card metric-card--up">
+                <div class="metric-card__name">Margen</div>
+                <div class="metric-card__val" data-from="22" data-to="61" data-suffix="%">22%</div>
+                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:36%"></div><div class="metric-card__bar metric-card__bar--after" style="--pct:100%"></div></div>
+                <div class="metric-card__delta">+39pp</div>
               </div>
-              <div class="stage__dot"></div>
-              <div class="stage__name">Demo</div>
-              <div class="stage__count">44</div>
-            </div>
-            <div class="pipeline__connector"></div>
-            <div class="pipeline__stage" style="--i:3">
-              <div class="stage__bar-wrap">
-                <div class="stage__bar" style="--h:28%"></div>
+              <div class="metric-card metric-card--down">
+                <div class="metric-card__name">CAC</div>
+                <div class="metric-card__val" data-from="980" data-to="340" data-suffix="€">980€</div>
+                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:100%"></div><div class="metric-card__bar metric-card__bar--after metric-card__bar--green" style="--pct:35%"></div></div>
+                <div class="metric-card__delta metric-card__delta--green">-65%</div>
               </div>
-              <div class="stage__dot"></div>
-              <div class="stage__name">Propuesta</div>
-              <div class="stage__count">28</div>
-            </div>
-            <div class="pipeline__connector"></div>
-            <div class="pipeline__stage pipeline__stage--win" style="--i:4">
-              <div class="stage__bar-wrap">
-                <div class="stage__bar" style="--h:18%"></div>
+              <div class="metric-card metric-card--down">
+                <div class="metric-card__name">Payback</div>
+                <div class="metric-card__val" data-from="14" data-to="5" data-suffix="m">14m</div>
+                <div class="metric-card__bar-wrap"><div class="metric-card__bar" style="--pct:100%"></div><div class="metric-card__bar metric-card__bar--after metric-card__bar--green" style="--pct:36%"></div></div>
+                <div class="metric-card__delta metric-card__delta--green">-9 meses</div>
               </div>
-              <div class="stage__dot"></div>
-              <div class="stage__name">Cierre</div>
-              <div class="stage__count">18</div>
             </div>
           </div>
-          <div class="pipeline__metrics">
-            <div class="metric">
-              <span class="metric__val">21%</span>
-              <span class="metric__lbl">Tasa de cierre</span>
-            </div>
-            <div class="metric metric--highlight">
-              <span class="metric__val">x3.2</span>
-              <span class="metric__lbl">Crecimiento medio</span>
-            </div>
-            <div class="metric">
-              <span class="metric__val">38d</span>
-              <span class="metric__lbl">Ciclo de venta</span>
-            </div>
-          </div>
-          <!-- floating cards -->
-          <div class="float-card float-card--1">
-            <div class="float-card__icon">↑</div>
-            <div>
-              <div class="float-card__val">+68%</div>
-              <div class="float-card__lbl">Ingresos Q4</div>
-            </div>
-          </div>
-          <div class="float-card float-card--2">
-            <div class="float-card__icon">✓</div>
-            <div>
-              <div class="float-card__val">Cierre</div>
-              <div class="float-card__lbl">NeuralTrust</div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
