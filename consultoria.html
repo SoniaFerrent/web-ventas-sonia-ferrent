@@ -31,11 +31,18 @@ a{text-decoration:none;}
 .nav-mobile a:hover{color:#f66f19;}
 .hero{background:#fff;padding:100px 56px 90px;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:80vh;justify-content:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%,rgba(246,111,25,.06) 0%,transparent 70%);pointer-events:none;}
-.hero-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#f66f19;margin-bottom:24px;opacity:0;animation:fadeUp .6s .2s forwards;}
-.hero-headline{font-size:clamp(38px,6vw,72px);font-weight:900;line-height:1.1;max-width:820px;color:#000;margin-bottom:20px;opacity:0;animation:fadeUp .7s .35s forwards;}
-.hero-headline .static{display:block;}
-.hero-headline .dynamic-wrap{display:inline-block;overflow:hidden;}
-.hero-headline .dynamic{color:#f66f19;display:inline-block;white-space:nowrap;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate;}
+.hero-orb-1{width:520px;height:520px;background:radial-gradient(circle,rgba(246,111,25,.18) 0%,rgba(246,111,25,0) 70%);top:-120px;left:-140px;animation:orbFloat1 9s ease-in-out infinite alternate;}
+.hero-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(246,180,25,.14) 0%,rgba(246,180,25,0) 70%);bottom:-80px;right:-100px;animation:orbFloat2 11s ease-in-out infinite alternate;}
+.hero-orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(246,111,25,.10) 0%,rgba(246,111,25,0) 70%);top:40%;left:60%;animation:orbFloat3 13s ease-in-out infinite alternate;}
+@keyframes orbFloat1{0%{transform:translate(0,0) scale(1);}100%{transform:translate(60px,40px) scale(1.1);}}
+@keyframes orbFloat2{0%{transform:translate(0,0) scale(1);}100%{transform:translate(-50px,-30px) scale(1.08);}}
+@keyframes orbFloat3{0%{transform:translate(0,0) scale(1);}100%{transform:translate(-40px,50px) scale(1.12);}}
+.hero-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#f66f19;margin-bottom:24px;opacity:0;animation:fadeUp .6s .2s forwards;}
+.hero-static{font-size:clamp(22px,2.6vw,38px);font-weight:500;color:#000;line-height:1.15;margin-bottom:10px;opacity:0;animation:fadeUp .7s .35s forwards;}
+.hero-headline{font-size:clamp(26px,3.2vw,50px);font-weight:800;line-height:1.2;max-width:820px;color:#000;margin-bottom:20px;opacity:0;animation:fadeUp .7s .45s forwards;}
+.hero-headline .dynamic-wrap{display:inline;overflow:hidden;}
+.hero-headline .dynamic{color:#f66f19;display:inline;white-space:nowrap;}
 .hero-sub{font-size:17px;font-weight:400;color:#555;max-width:560px;line-height:1.65;margin-bottom:40px;opacity:0;animation:fadeUp .7s .5s forwards;}
 .hero-cta{display:inline-block;background:#f66f19;color:#fff;font-size:14px;font-weight:700;padding:16px 36px;border-radius:50px;transition:background .2s,transform .2s,box-shadow .2s;opacity:0;animation:fadeUp .7s .65s forwards;}
 .hero-cta:hover{background:#e05e10;transform:translateY(-2px);box-shadow:0 8px 28px rgba(246,111,25,.35);}
@@ -59,23 +66,34 @@ a{text-decoration:none;}
 .services-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:48px;}
 .service-chip{background:#fff;border:1.5px solid #eee;border-radius:14px;padding:18px 24px;font-size:13px;font-weight:600;color:#1e1e1e;transition:border-color .2s,color .2s;text-align:center;min-width:140px;text-decoration:none;display:inline-block;cursor:pointer;}
 .service-chip:hover{border-color:#f66f19;color:#f66f19;}
+.services-chips-bar{background:transparent;padding:18px 56px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px;transition:background .3s,box-shadow .3s;}
+@media(min-width:761px){
+  .services-sticky-wrapper{position:relative;}
+  .services-chips-bar{position:sticky;top:65px;z-index:90;}
+  .services-chips-bar.is-stuck{background:rgba(255,255,255,0.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(0,0,0,.07);}
+}
 .service-chip span{display:block;font-size:22px;margin-bottom:8px;}
 .service-section-white{background:#fff;padding:8px 0;}
 .service-section-gray{background:#fafafa;padding:8px 0;}
 .service-detail{padding:96px 56px;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;opacity:0;transform:translateY(40px);transition:opacity .65s ease,transform .65s ease;}
 .service-detail.visible{opacity:1;transform:translateY(0);}
 .service-detail-img{border-radius:20px;overflow:hidden;background:#f0f0f0;aspect-ratio:4/3;}
-.service-detail-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.service-detail-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
 .service-detail.reverse .service-detail-img{order:2;}
 .service-detail.reverse .service-detail-content{order:1;}
 .service-tag{display:inline-block;background:#fff3eb;color:#f66f19;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:20px;}
-.service-detail-content h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;line-height:1.2;color:#000;margin-bottom:16px;}
-.service-detail-content p{font-size:15px;color:#555;line-height:1.75;margin-bottom:24px;}
+.service-detail-content h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;line-height:1.2;color:#000;margin-bottom:16px;transition:transform .3s ease;transform-origin:left center;}
+.service-detail-content p{font-size:15px;color:#555;line-height:1.75;margin-bottom:24px;transition:transform .3s ease;transform-origin:left center;}
 .service-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
 .service-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;font-weight:500;line-height:1.5;}
 .service-features li::before{content:'→';color:#f66f19;font-weight:700;flex-shrink:0;margin-top:1px;}
 .service-btn{display:inline-block;background:#000;color:#fff;font-size:13px;font-weight:700;padding:13px 28px;border-radius:50px;transition:background .2s,transform .15s;}
 .service-btn:hover{background:#f66f19;transform:translateY(-1px);}
+.service-detail:hover .service-detail-img img{transform:scale(1.05);}
+.service-detail:hover .service-detail-content h2{transform:scale(1.02);}
+.service-detail:hover .service-detail-content p{transform:scale(1.01);}
+.service-detail:hover .service-btn{transform:scale(1.05);}
+.service-detail:hover .service-btn:hover{transform:scale(1.1) translateY(-2px);}
 .section-divider{height:1px;background:#ececec;margin:0 56px;}
 .process{background:#fff3eb;padding:96px 56px;text-align:center;}
 .process h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#1e1e1e;margin-bottom:14px;line-height:1.2;}
@@ -214,11 +232,12 @@ a{text-decoration:none;}
 </nav>
 
 <section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
   <p class="hero-label">Consultoría de Ventas B2B</p>
-  <h1 class="hero-headline">
-    <span class="static">Tu equipo puede vender</span>
-    <span class="dynamic-wrap"><span class="dynamic" id="dynamic-word">con tecnología punta.</span></span>
-  </h1>
+  <p class="hero-static">Tu equipo puede vender</p>
+  <h1 class="hero-headline"><span class="dynamic-wrap"><span class="dynamic" id="dynamic-word">con tecnología punta.</span></span></h1>
   <p class="hero-sub">Diseño e implemento el sistema comercial que tu empresa necesita: desde la captación hasta el cierre, con resultados medibles.</p>
   <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="hero-cta">Agenda una llamada gratuita</a>
 </section>
@@ -226,14 +245,16 @@ a{text-decoration:none;}
 <section class="services-intro">
   <h2>Un servicio para cada reto</h2>
   <p>Cada empresa tiene un reto comercial distinto.<br>Mi trabajo se centrará en las áreas que más impacto generan en tu crecimiento.</p>
-  <div class="services-cards">
+</section>
+<div class="services-sticky-wrapper">
+  <div class="chips-sentinel" style="height:1px;"></div>
+  <div class="services-chips-bar" id="services-chips-bar">
     <a href="#s1" class="service-chip">Sistema de Captación</a>
     <a href="#s2" class="service-chip">Playbook de Ventas</a>
     <a href="#s3" class="service-chip">Consultas 1:1</a>
     <a href="#s4" class="service-chip">Formación B2B</a>
     <a href="#s5" class="service-chip">Acompañamiento</a>
   </div>
-</section>
 
 <div class="service-section-white">
 <div class="service-detail" id="s1">
@@ -322,6 +343,7 @@ a{text-decoration:none;}
     </ul>
     <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Hablemos de tu proyecto →</a>
   </div>
+</div>
 </div>
 </div>
 
@@ -428,7 +450,6 @@ a{text-decoration:none;}
       </div>
     </div>
     <button class="form-submit" type="button">Enviar mensaje →</button>
-    <p class="form-note">Sin spam. Sin presión. Solo una conversación para ver si encajamos.</p>
   </div>
 </section>
 
@@ -497,12 +518,9 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 details.forEach(d => obs.observe(d));
 
-document.getElementById('faq-list').addEventListener('click', (e) => {
-  const item = e.target.closest('.faq-item');
-  if (!item) return;
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('mouseenter', () => item.classList.add('open'));
+  item.addEventListener('mouseleave', () => item.classList.remove('open'));
 });
 
 // ── Testimonios (misma sección que index.html) ──
@@ -548,6 +566,15 @@ document.getElementById('faq-list').addEventListener('click', (e) => {
     // Silencioso: si falla el fetch (p.ej. abriendo como file://), no bloquea el resto
   }
 })();
+
+// ── Sticky chips bar detection ──
+const chipsBar = document.getElementById('services-chips-bar');
+const sentinel = chipsBar ? chipsBar.previousElementSibling : null;
+if (chipsBar && sentinel && window.matchMedia('(min-width:761px)').matches) {
+  new IntersectionObserver(([entry]) => {
+    chipsBar.classList.toggle('is-stuck', !entry.isIntersecting);
+  }, { rootMargin: '-65px 0px 0px 0px', threshold: 0 }).observe(sentinel);
+}
 </script>
 </body>
 </html>
