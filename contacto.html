@@ -201,7 +201,7 @@ a{text-decoration:none;}
     <h2 class="contact-form-title">Envíame un mensaje</h2>
     <p class="contact-form-sub">Cuéntame tu situación y te responderé lo antes posible.</p>
 
-    <div id="contact-form">
+    <form id="contact-form" action="https://formspree.io/f/mzdjbvly" method="POST">
       <div class="form-grid">
         <div class="form-group">
           <label for="nombre">Nombre *</label>
@@ -224,9 +224,9 @@ a{text-decoration:none;}
         <input type="checkbox" id="privacidad" name="privacidad"/>
         <label for="privacidad">He leído y acepto la <a href="aviso-legal.html">política de privacidad</a></label>
       </div>
-      <button class="form-submit" type="button" id="btn-submit">Enviar mensaje</button>
+      <button class="form-submit" type="submit" id="btn-submit">Enviar mensaje</button>
       <p class="form-note">Tu información es confidencial y nunca se comparte con terceros.</p>
-    </div>
+    </form>
 
     <div class="form-success" id="form-success">
       <div class="form-success-icon">
@@ -282,21 +282,17 @@ hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('open');
 });
 
-document.getElementById('btn-submit').addEventListener('click', () => {
-  const nombre = document.getElementById('nombre').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const mensaje = document.getElementById('mensaje').value.trim();
-  const privacidad = document.getElementById('privacidad').checked;
-  if (!nombre || !email || !mensaje) {
-    alert('Por favor, rellena los campos obligatorios (Nombre, E-mail y Mensaje).');
-    return;
-  }
-  if (!privacidad) {
-    alert('Por favor, acepta la política de privacidad para continuar.');
-    return;
-  }
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('btn-submit');
+  btn.textContent = 'Enviando…'; btn.disabled = true;
+  try {
+    const res = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
+    if (res.ok) {
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else { btn.textContent = 'Error, intenta de nuevo'; btn.disabled = false; }
+  } catch { btn.textContent = 'Error de red'; btn.disabled = false; }
 });
 </script>
 </body>
