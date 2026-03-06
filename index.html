@@ -64,6 +64,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
 
 /* ── PARA QUIÉN ── */
 .pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.section--pq{padding-top:128px;padding-bottom:128px;}
 .pq-card{background:transparent;border-radius:0;padding:0;border:none;transition:none;display:flex;flex-direction:column;align-items:center;}
 .pq-card:hover{background:transparent;border-color:transparent;transform:none;box-shadow:none;}
 .pq-bar{height:18px;width:200px;background:linear-gradient(90deg,#f66f19,#f6c919);border-radius:4px;margin-bottom:24px;margin-left:auto;margin-right:auto;}
@@ -142,6 +143,10 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .btn-submit{width:100%;margin-top:6px;font-size:14px;padding:16px;text-align:center;}
 .form-ok{display:none;background:#f0faf0;border:1.5px solid #86d98a;border-radius:8px;padding:12px;text-align:center;font-size:13px;color:#1a7a1a;font-weight:600;margin-top:12px;}
+.form-check{display:flex;align-items:flex-start;gap:10px;margin-top:8px;}
+.form-check input[type="checkbox"]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:#f66f19;cursor:pointer;}
+.form-check label{font-size:12px;color:#888;line-height:1.6;cursor:pointer;}
+.form-check label a{color:#f66f19;}
 
 /* ── FOOTER ── */
 .footer{background:#111;padding:52px 56px 32px;}
@@ -168,7 +173,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
 .sonia-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top;border-radius:12px;display:block;}
 .sonia-content h1{font-size:clamp(22px,2.3vw,34px);font-weight:600;margin-bottom:20px;line-height:1.2;}
 .sonia-content p{font-size:15px;color:#444;line-height:1.8;margin-bottom:24px;}
-@media(max-width:760px){.sonia-section{padding:48px 24px;}.sonia-inner{display:flex;flex-direction:column;gap:8px;}.sonia-content{order:1;}.srv-tab-cta{display:none;}.sonia-img-wrap{order:2;width:70%;margin:0 auto;}.sonia-cta{order:3;text-align:center;}.sonia-content{text-align:center;}.section-title{text-align:center;}.cta-form-section{padding:48px 24px;}.cta-form-inner{grid-template-columns:1fr;gap:40px;}.cta-left{text-align:center;}.form-grid{grid-template-columns:1fr;}}
+@media(max-width:760px){.section--pq{padding-top:48px;padding-bottom:48px;}.pq-grid{grid-template-columns:1fr;gap:48px;}.pq-card .btn{text-align:center;width:100%;}.sonia-section{padding:48px 24px;}.sonia-inner{display:flex;flex-direction:column;gap:8px;}.sonia-content{order:1;}.srv-tab-cta{display:none;}.sonia-img-wrap{order:2;width:70%;margin:0 auto;}.sonia-cta{order:3;text-align:center;}.sonia-content{text-align:center;}.section-title{text-align:center;}.cta-form-section{padding:48px 24px;}.cta-form-inner{grid-template-columns:1fr;gap:40px;}.cta-left{text-align:center;}.form-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -215,20 +220,20 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
 </section>
 
 <!-- PARA QUIÉN -->
-<section class="section" style="background:#fff;">
+<section class="section section--pq" style="background:#fff;">
   <div class="section-inner">
     <div class="pq-grid">
       <div class="pq-card">
         <div class="pq-bar"></div>
         <h3>CEOs y Fundadores</h3>
         <p>Con mi ayuda implementarás estrategias, procesos y técnicas comerciales que escalarán las ventas de tu empresa, y te ayudarán a lograr tus objetivos.</p>
-        <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" class="btn btn-orange">→ ¡Eso es lo que necesito!</a>
+        <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" class="btn btn-orange">¡Eso es lo que necesito!</a>
       </div>
       <div class="pq-card">
         <div class="pq-bar"></div>
         <h3>Equipos de Ventas</h3>
         <p>Tu equipo se convertirá en uno de alto rendimiento a través de formaciones de habilidades comerciales, liderazgo, comunicación y desarrollo profesional.</p>
-        <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" class="btn btn-orange">→ ¡Queremos equipos de alto rendimiento!</a>
+        <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" class="btn btn-orange">¡Queremos equipos de alto rendimiento!</a>
       </div>
     </div>
   </div>
@@ -349,7 +354,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
     <div class="sonia-content">
       <h1>Sonia Ferrer Rentero</h1>
       <p>Todo lo que te propongo, lo he logrado antes:</p>
-      <p>Escalé ingresos como Directora de Ventas en&nbsp;<strong>Factorial</strong>, liderando equipos de hasta 180 personas en 6 mercados europeos, y desde 2024 he ayudado a +30 Startups y PYMEs B2B a lograr sus objetivos de crecimiento y rentabilidad.</p>
+      <p>Escalé ingresos como Directora de Ventas en&nbsp;<strong>Factorial</strong>, liderando equipos de hasta 180 personas en 6 mercados europeos, y desde 2024 he ayudado a +35 Startups y PYMEs B2B a lograr sus objetivos de crecimiento y rentabilidad.</p>
       <p>¿El secreto?, combinar la mejor tecnología disponible con un enfoque 200% humano.</p>
     </div>
   <div class="sonia-cta">
@@ -510,7 +515,11 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
           <label for="mensaje">¿En qué puedo ayudarte?</label>
           <textarea id="mensaje" name="mensaje" placeholder="" required></textarea>
         </div>
-        <button type="submit" class="btn btn-orange btn-submit">Enviar mensaje →</button>
+        <div class="form-check">
+          <input type="checkbox" id="privacidad" name="privacidad" required/>
+          <label for="privacidad">He leído y acepto la <a href="aviso-legal.html">política de privacidad</a></label>
+        </div>
+        <button type="submit" class="btn btn-orange btn-submit">Enviar mensaje</button>
         <div class="form-ok" id="form-ok">✓ Mensaje enviado. Me aseguraré de encontrar la forma de ayudarte.</div>
       </form>
     </div>
@@ -540,13 +549,13 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#1e1e1e;overflow-
           <li><a href="https://www.linkedin.com/in/soniaferrerrentero/" target="_blank">LinkedIn</a></li>
           <li><a href="https://ventasconsoniaferrent.substack.com/about" target="_blank">Newsletter B2B</a></li>
           <li><a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank">Agenda una llamada</a></li>
-          <li><a href="https://ventasconsoniaferrent.com/politica-de-privacidad-y-aviso-legal/">Aviso legal</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Sonia Ferrer Rentero · Todos los derechos reservados</p>
-      <a href="https://ventasconsoniaferrent.com/politica-de-privacidad-y-aviso-legal/">Política de privacidad</a>
+      <a href="aviso-legal.html">Política de privacidad</a>
     </div>
     <p class="footer-seo">Estrategia de ventas B2B · Consultoría comercial para Startups · Escalabilidad en ventas · Formación de equipos comerciales · Consultoría de ventas SaaS · Estrategia de crecimiento empresarial</p>
   </div>
@@ -571,7 +580,7 @@ setTimeout(() => {
   setTimeout(() => {
     document.getElementById('hero-kpis').classList.add('visible');
     setTimeout(() => {
-      animateCounter(document.querySelector('.kpi-n1'), 30, '', '+', 700);
+      animateCounter(document.querySelector('.kpi-n1'), 35, '', '+', 700);
       animateCounter(document.querySelector('.kpi-n2'), 200, '', '+', 700);
       animateCounter(document.querySelector('.kpi-n3'), 9, '+', '', 500);
     }, 150);

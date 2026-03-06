@@ -95,7 +95,12 @@ a{text-decoration:none;}
 .form-group textarea{resize:vertical;min-height:100px;}
 .form-submit{display:block;width:100%;background:#f66f19;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:16px;border-radius:50px;border:none;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px;}
 .form-submit:hover{background:#e05e10;transform:translateY(-1px);}
+.btn-scale:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.18);}
 .form-note{font-size:11px;color:#aaa;text-align:center;margin-top:12px;}
+.form-check{display:flex;align-items:flex-start;gap:10px;margin-top:8px;}
+.form-check input[type="checkbox"]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:#f66f19;cursor:pointer;}
+.form-check label{font-size:12px;color:#888;line-height:1.6;cursor:pointer;}
+.form-check label a{color:#f66f19;}
 
 /* FOOTER */
 .footer{background:#111;padding:52px 56px 32px;}
@@ -173,7 +178,7 @@ a{text-decoration:none;}
       <p class="body-text">Mi experiencia en el Unicornio español Factorial marcó un antes y un después en mi carrera profesional.</p>
       <p class="body-text">En Factorial pasé rápidamente de Vendedora #1 a Directora de Ventas, llegando a liderar hasta 180 vendedores (SDRs y AEs) y managers de ventas en 6 mercados, mientras aprendía de los mejores profesionales y de todo tipo de retos que se nos presentaron durante esa etapa de hipercrecimiento en la que participé.</p>
       <p class="body-text">Antes de eso, había desempeñado el rol de Especialista de Marketing en StartUps y PYMES, lo que me permitió desarrollar nociones clave en investigación de mercados, copywriting, estrategias y canales de comunicación, y más.</p>
-      <p class="body-text">Desde enero del 2024 me dedico en exclusiva a ayudar a StartUps y PYMEs B2B a mejorar sus ventas de la forma más efectiva y humana posible y, desde entonces, cuento ya con +30 clientes satisfechos.</p>
+      <p class="body-text">Desde enero del 2024 me dedico en exclusiva a ayudar a StartUps y PYMEs B2B a mejorar sus ventas de la forma más efectiva y humana posible y, desde entonces, cuento ya con +35 clientes satisfechos.</p>
     </div>
   </div>
 
@@ -189,7 +194,7 @@ a{text-decoration:none;}
       </ul>
     </div>
     <div class="formacion-col">
-      <h2>¡Y me mantengo en constante aprendizaje!</h2>
+      <h2>Y me mantengo en constante aprendizaje</h2>
       <ul class="formacion-list">
         <li>Growth Strategy (CXL)</li>
         <li>The Complete AI Guide: Learn ChatGPT, Generative AI &amp; More (Julian Melanson and Benza Maman)</li>
@@ -256,7 +261,7 @@ a{text-decoration:none;}
 <section class="cta-section">
   <h2>¿Crees que puedo ayudarte?</h2>
   <p class="cta-sub">Cuéntame qué necesitas en una breve reunión.</p>
-  <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" style="display:inline-block;background:#000;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:15px 28px;border-radius:50px;text-decoration:none;margin-bottom:52px;transition:transform .18s ease,box-shadow .18s ease;">Agéndala aquí</a>
+  <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="btn-scale" style="display:inline-block;background:#000;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:15px 28px;border-radius:50px;text-decoration:none;margin-bottom:52px;transition:transform .18s ease,box-shadow .18s ease;">Agéndala aquí</a>
   <div class="cta-form">
     <h3>O déjame un mensaje si lo prefieres</h3>
     <div class="form-grid">
@@ -276,6 +281,10 @@ a{text-decoration:none;}
         <label>¿En qué puedo ayudarte?</label>
         <textarea></textarea>
       </div>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="privacidad" name="privacidad"/>
+      <label for="privacidad">He leído y acepto la <a href="aviso-legal.html">política de privacidad</a></label>
     </div>
     <button class="form-submit" type="button">Enviar mensaje</button>
   </div>
@@ -303,13 +312,13 @@ a{text-decoration:none;}
           <li><a href="https://www.linkedin.com/in/soniaferrerrentero/" target="_blank">LinkedIn</a></li>
           <li><a href="https://ventasconsoniaferrent.substack.com/about" target="_blank">Newsletter B2B</a></li>
           <li><a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank">Agenda una llamada</a></li>
-          <li><a href="https://ventasconsoniaferrent.com/politica-de-privacidad-y-aviso-legal/" target="_blank">Aviso legal</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Sonia Ferrer Rentero · Todos los derechos reservados</p>
-      <a href="https://ventasconsoniaferrent.com/politica-de-privacidad-y-aviso-legal/" target="_blank">Política de privacidad</a>
+      <a href="aviso-legal.html">Política de privacidad</a>
     </div>
     <p class="footer-seo">Estrategia de ventas B2B · Consultoría comercial para Startups · Escalabilidad en ventas · Formación de equipos comerciales · Consultoría de ventas SaaS · Estrategia de crecimiento empresarial</p>
   </div>

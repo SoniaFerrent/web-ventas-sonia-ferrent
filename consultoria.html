@@ -143,6 +143,7 @@ a{text-decoration:none;}
 .faq-answer-inner{padding:0 24px 24px;font-size:14px;color:#555;line-height:1.75;}
 .cta-section{background:linear-gradient(135deg,#f66f19 0%,#eb2411 100%);padding:96px 56px;text-align:center;}
 .cta-section h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#fff;margin-bottom:14px;line-height:1.2;}
+.btn-scale:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.18);}
 .cta-section .cta-sub{font-size:16px;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 52px;}
 .cta-form{background:#fff;border-radius:24px;padding:48px 52px;max-width:600px;margin:0 auto;box-shadow:0 24px 72px rgba(0,0,0,.18);text-align:left;}
 .cta-form h3{font-size:20px;font-weight:700;color:#000;margin-bottom:28px;}
@@ -156,6 +157,10 @@ a{text-decoration:none;}
 .form-submit{display:block;width:100%;background:#f66f19;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:16px;border-radius:50px;border:none;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px;}
 .form-submit:hover{background:#e05e10;transform:translateY(-1px);}
 .form-note{font-size:11px;color:#aaa;text-align:center;margin-top:12px;}
+.form-check{display:flex;align-items:flex-start;gap:10px;margin-top:8px;}
+.form-check input[type="checkbox"]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:#f66f19;cursor:pointer;}
+.form-check label{font-size:12px;color:#888;line-height:1.6;cursor:pointer;}
+.form-check label a{color:#f66f19;}
 .footer{background:#111;padding:52px 56px 32px;}
 .footer-inner{max-width:1160px;margin:0 auto;}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid #222;margin-bottom:24px;}
@@ -423,7 +428,7 @@ a{text-decoration:none;}
 <section class="cta-section">
   <h2>¡Pasemos al siguiente paso!</h2>
   <p class="cta-sub">Cuéntame tu reto y vemos juntos cómo puedo ayudarte. Primera llamada sin coste ni compromiso.</p>
-  <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" style="display:inline-block;background:#000;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:15px 28px;border-radius:50px;text-decoration:none;margin-bottom:52px;transition:transform .18s ease,box-shadow .18s ease;">¡Hablemos!</a>
+  <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="btn-scale" style="display:inline-block;background:#000;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:15px 28px;border-radius:50px;text-decoration:none;margin-bottom:52px;transition:transform .18s ease,box-shadow .18s ease;">¡Hablemos!</a>
   <div class="cta-form">
     <h3>O déjame un mensaje si lo prefieres</h3>
     <div class="form-grid">
@@ -443,6 +448,10 @@ a{text-decoration:none;}
         <label>¿En qué puedo ayudarte?</label>
         <textarea></textarea>
       </div>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="privacidad" name="privacidad"/>
+      <label for="privacidad">He leído y acepto la <a href="aviso-legal.html">política de privacidad</a></label>
     </div>
     <button class="form-submit" type="button">Enviar mensaje →</button>
   </div>
@@ -470,13 +479,13 @@ a{text-decoration:none;}
           <li><a href="https://www.linkedin.com/in/soniaferrerrentero/" target="_blank">LinkedIn</a></li>
           <li><a href="https://ventasconsoniaferrent.substack.com/about" target="_blank">Newsletter B2B</a></li>
           <li><a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank">Agenda una llamada</a></li>
-          <li><a href="https://ventasconsoniaferrent.com/politica-de-privacidad-y-aviso-legal/" target="_blank">Aviso legal</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Sonia Ferrer Rentero · Todos los derechos reservados</p>
-      <a href="https://ventasconsoniaferrent.com/politica-de-privacidad-y-aviso-legal/" target="_blank">Política de privacidad</a>
+      <a href="aviso-legal.html">Política de privacidad</a>
     </div>
     <p class="footer-seo">Estrategia de ventas B2B · Consultoría comercial para Startups · Escalabilidad en ventas · Formación de equipos comerciales · Consultoría de ventas SaaS · Estrategia de crecimiento empresarial</p>
   </div>
