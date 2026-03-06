@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /aviso-legal.html
 
 Sitemap: https://ventasconsoniaferrent.com/sitemap.xml
