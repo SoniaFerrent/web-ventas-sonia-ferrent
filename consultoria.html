@@ -53,23 +53,23 @@ a{text-decoration:none;}
 .tst-role{font-size:11px;text-align:center;color:#aaa;margin-bottom:8px;font-weight:500;}
 .tst-stars{text-align:center;font-size:14px;margin-bottom:12px;color:#f66f19;letter-spacing:2px;}
 .tst-text{font-size:13px;line-height:1.75;color:#555;text-align:center;}
-.services-intro{background:#f9f9f9;padding:80px 56px;text-align:center;}
-.services-intro h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#000;margin-bottom:16px;}
+.services-intro{background:#fff;padding:80px 56px 40px;text-align:center;}
+.services-intro h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#000;margin-bottom:16px;line-height:1.2;}
 .services-intro p{font-size:16px;color:#666;max-width:600px;margin:0 auto;line-height:1.7;}
 .services-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:48px;}
-.service-chip{background:#fff;border:1.5px solid #eee;border-radius:14px;padding:18px 24px;font-size:13px;font-weight:600;color:#1e1e1e;transition:border-color .2s,color .2s;text-align:center;min-width:140px;}
+.service-chip{background:#fff;border:1.5px solid #eee;border-radius:14px;padding:18px 24px;font-size:13px;font-weight:600;color:#1e1e1e;transition:border-color .2s,color .2s;text-align:center;min-width:140px;text-decoration:none;display:inline-block;cursor:pointer;}
 .service-chip:hover{border-color:#f66f19;color:#f66f19;}
 .service-chip span{display:block;font-size:22px;margin-bottom:8px;}
 .service-section-white{background:#fff;padding:8px 0;}
 .service-section-gray{background:#fafafa;padding:8px 0;}
 .service-detail{padding:96px 56px;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;opacity:0;transform:translateY(40px);transition:opacity .65s ease,transform .65s ease;}
 .service-detail.visible{opacity:1;transform:translateY(0);}
-.service-detail-img{border-radius:20px;overflow:hidden;background:#f0f0f0;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
-.service-detail-img .img-icon{font-size:80px;opacity:.14;}
+.service-detail-img{border-radius:20px;overflow:hidden;background:#f0f0f0;aspect-ratio:4/3;}
+.service-detail-img img{width:100%;height:100%;object-fit:cover;display:block;}
 .service-detail.reverse .service-detail-img{order:2;}
 .service-detail.reverse .service-detail-content{order:1;}
 .service-tag{display:inline-block;background:#fff3eb;color:#f66f19;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:20px;}
-.service-detail-content h2{font-size:clamp(26px,3.5vw,38px);font-weight:800;line-height:1.2;color:#000;margin-bottom:16px;}
+.service-detail-content h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;line-height:1.2;color:#000;margin-bottom:16px;}
 .service-detail-content p{font-size:15px;color:#555;line-height:1.75;margin-bottom:24px;}
 .service-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
 .service-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#333;font-weight:500;line-height:1.5;}
@@ -77,15 +77,18 @@ a{text-decoration:none;}
 .service-btn{display:inline-block;background:#000;color:#fff;font-size:13px;font-weight:700;padding:13px 28px;border-radius:50px;transition:background .2s,transform .15s;}
 .service-btn:hover{background:#f66f19;transform:translateY(-1px);}
 .section-divider{height:1px;background:#ececec;margin:0 56px;}
-.process{background:#000;padding:96px 56px;text-align:center;}
-.process h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;margin-bottom:14px;}
+.process{background:#fff3eb;padding:96px 56px;text-align:center;}
+.process h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#1e1e1e;margin-bottom:14px;line-height:1.2;}
 .process .process-sub{font-size:15px;color:#888;margin-bottom:64px;max-width:520px;margin-left:auto;margin-right:auto;}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto;position:relative;}
-.process-step{position:relative;}
-.process-connector{position:absolute;top:28px;right:-16px;width:32px;height:2px;background:#2a2a2a;}
-.step-num{width:56px;height:56px;border-radius:50%;border:2px solid #f66f19;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#f66f19;margin:0 auto 20px;}
-.step-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;}
-.step-desc{font-size:13px;color:#666;line-height:1.65;}
+.process-step{position:relative;cursor:default;}
+.process-connector{position:absolute;top:28px;right:-16px;width:32px;height:2px;background:#f8c9a0;}
+.step-num{width:56px;height:56px;border-radius:50%;border:2px solid #f66f19;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#f66f19;margin:0 auto 20px;transition:color .25s,background .25s;}
+.step-title{font-size:15px;font-weight:700;color:#1e1e1e;margin-bottom:8px;transition:font-size .25s;}
+.step-desc{font-size:13px;color:#666;line-height:1.65;transition:font-size .25s;}
+.process-step:hover .step-num{color:#fff;background:#f66f19;}
+.process-step:hover .step-title{font-size:16.5px;}
+.process-step:hover .step-desc{font-size:14px;}
 .casos{background:#f9f9f9;padding:96px 56px;text-align:center;}
 .casos h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:#000;margin-bottom:12px;}
 .casos .casos-sub{font-size:15px;color:#666;margin-bottom:56px;max-width:520px;margin-left:auto;margin-right:auto;}
@@ -105,10 +108,13 @@ a{text-decoration:none;}
 .casos-dots{display:flex;gap:8px;align-items:center;}
 .casos-dot{width:8px;height:8px;border-radius:50%;background:#eee;cursor:pointer;transition:background .2s,width .2s;border:none;}
 .casos-dot.active{background:#f66f19;width:20px;border-radius:4px;}
+.section{padding:clamp(48px,6vw,88px) 56px;}
+.section-inner{max-width:1160px;margin:0 auto;}
+.section-title{font-size:clamp(22px,2.5vw,36px);font-weight:700;margin-bottom:40px;line-height:1.2;text-align:center;}
 .faq-section{background:#fff;padding:96px 0;}
 .faq-inner{max-width:860px;margin:0 auto;padding:0 56px;}
 .faq-header{text-align:center;margin-bottom:56px;}
-.faq-header h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:#000;margin-bottom:12px;}
+.faq-header h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#000;margin-bottom:12px;line-height:1.2;}
 .faq-header p{font-size:15px;color:#666;}
 .faq-list{display:flex;flex-direction:column;gap:12px;}
 .faq-item{border:1.5px solid #eee;border-radius:16px;overflow:hidden;transition:border-color .2s;}
@@ -123,7 +129,7 @@ a{text-decoration:none;}
 .faq-item.open .faq-answer{max-height:300px;}
 .faq-answer-inner{padding:0 24px 24px;font-size:14px;color:#555;line-height:1.75;}
 .cta-section{background:linear-gradient(135deg,#f66f19 0%,#eb2411 100%);padding:96px 56px;text-align:center;}
-.cta-section h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-bottom:14px;}
+.cta-section h2{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#fff;margin-bottom:14px;line-height:1.2;}
 .cta-section .cta-sub{font-size:16px;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 52px;}
 .cta-form{background:#fff;border-radius:24px;padding:48px 52px;max-width:600px;margin:0 auto;box-shadow:0 24px 72px rgba(0,0,0,.18);text-align:left;}
 .cta-form h3{font-size:20px;font-weight:700;color:#000;margin-bottom:28px;}
@@ -183,7 +189,7 @@ a{text-decoration:none;}
 <!-- NAV (consistente con index.html) -->
 <nav class="nav">
   <a href="index.html" class="nav-brand">
-    <img src="data:image/png;base64,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" alt="Logo Sonia Ferrer"/>
+    <img src="Logo.png" alt="Logo Ventas con Sonia Ferrent"/>
     Ventas con Sonia Ferrent
   </a>
   <div class="nav-right">
@@ -211,161 +217,140 @@ a{text-decoration:none;}
   <p class="hero-label">Consultoría de Ventas B2B</p>
   <h1 class="hero-headline">
     <span class="static">Tu equipo puede vender</span>
-    <span class="dynamic-wrap"><span class="dynamic" id="dynamic-word">más y mejor.</span></span>
+    <span class="dynamic-wrap"><span class="dynamic" id="dynamic-word">con tecnología punta.</span></span>
   </h1>
-  <p class="hero-sub">Diseño y construyo el sistema comercial que tu empresa necesita: desde la captación hasta el cierre, con procesos reales y resultados medibles.</p>
+  <p class="hero-sub">Diseño e implemento el sistema comercial que tu empresa necesita: desde la captación hasta el cierre, con resultados medibles.</p>
   <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="hero-cta">Agenda una llamada gratuita</a>
-  <div class="hero-logos">
-    <p class="hero-logos-label">Sectores donde he generado impacto</p>
-    <div class="hero-logos-row">
-      <span class="logo-pill">SaaS B2B</span>
-      <span class="logo-pill">Fintech</span>
-      <span class="logo-pill">HR Tech</span>
-      <span class="logo-pill">Consultoras</span>
-      <span class="logo-pill">Scale-ups</span>
-      <span class="logo-pill">PYMEs</span>
-    </div>
-  </div>
 </section>
 
 <section class="services-intro">
-  <h2>¿En qué te puedo ayudar?</h2>
-  <p>Cada empresa tiene un reto comercial distinto. Trabajo en las áreas que más impacto generan en tu crecimiento.</p>
+  <h2>Un servicio para cada reto</h2>
+  <p>Cada empresa tiene un reto comercial distinto.<br>Mi trabajo se centrará en las áreas que más impacto generan en tu crecimiento.</p>
   <div class="services-cards">
-    <div class="service-chip"><span>🎯</span>Captación de clientes</div>
-    <div class="service-chip"><span>⚙️</span>Proceso comercial</div>
-    <div class="service-chip"><span>🎓</span>Formación de equipos</div>
-    <div class="service-chip"><span>🛠️</span>Herramientas &amp; CRM</div>
-    <div class="service-chip"><span>📊</span>Gestión comercial</div>
+    <a href="#s1" class="service-chip">Sistema de Captación</a>
+    <a href="#s2" class="service-chip">Playbook de Ventas</a>
+    <a href="#s3" class="service-chip">Consultas 1:1</a>
+    <a href="#s4" class="service-chip">Formación B2B</a>
+    <a href="#s5" class="service-chip">Acompañamiento</a>
   </div>
 </section>
 
-<div class="section-divider"></div>
 <div class="service-section-white">
 <div class="service-detail" id="s1">
-  <div class="service-detail-img"><span class="img-icon">🎯</span></div>
+  <div class="service-detail-img"><img src="Images/Sistema de captación b2b.png" alt="Sistema de Captación B2B"/></div>
   <div class="service-detail-content">
-    <span class="service-tag">Captación de clientes</span>
-    <h2>Llena tu pipeline de oportunidades reales</h2>
-    <p>Diseñamos tu estrategia de prospección B2B desde cero: ICP definido, mensajes que abren puertas y secuencias multicanal que generan reuniones con los decisores correctos.</p>
+    <h2>Diseño tu Sistema de Captación</h2>
+    <p>Muchas empresas dependen del boca a boca o de la suerte para conseguir nuevos clientes. Yo te ayudo a cambiar eso. Te ayudo a diseñar el sistema de captación que, según tu mercado y contexto, te ayude a llegar a tu cliente potencial de forma constante y sostenible. Combinamos estrategias de venta en frío, acciones inbound para atraer clientes de forma orgánica, y automatización inteligente que multiplica tu capacidad sin multiplicar tu esfuerzo.</p>
     <ul class="service-features">
-      <li>Definición de ICP y segmentación de mercado</li>
-      <li>Estrategia outbound: LinkedIn, email, llamadas</li>
-      <li>Secuencias de prospección personalizadas</li>
-      <li>Mensajes y scripts de venta que convierten</li>
-      <li>Métricas de captación y seguimiento semanal</li>
+      <li>Definición de ICP y segmentación precisa del mercado</li>
+      <li>Estrategia outbound multicanal: LinkedIn, email frío y llamadas</li>
+      <li>Secuencias de prospección personalizadas y automatizadas</li>
+      <li>Plan de contenidos para captación orgánica</li>
+      <li>Seguimiento de métricas y optimización continua</li>
     </ul>
-    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Hablemos de tu captación →</a>
+    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Diseñemos tu sistema →</a>
   </div>
 </div>
 </div>
 
-<div class="section-divider"></div>
 <div class="service-section-gray">
 <div class="service-detail reverse" id="s2">
-  <div class="service-detail-img"><span class="img-icon">⚙️</span></div>
+  <div class="service-detail-img"><img src="Images/Playbook de Ventas B2B.png" alt="Playbook de Ventas B2B"/></div>
   <div class="service-detail-content">
-    <span class="service-tag">Proceso comercial</span>
-    <h2>Un proceso de venta que escala contigo</h2>
-    <p>Muchas empresas pierden clientes no por falta de producto, sino por falta de proceso. Audito tu ciclo de ventas actual y construyo uno estructurado, documentado y reproducible.</p>
+    <h2>Desarrollo de tu Playbook de Ventas</h2>
+    <p>Sin un proceso comercial documentado, cada vendedor improvisa a su manera y los resultados son impredecibles. Trabajo contigo para construir el manual de ventas que necesitas: desde la primera toma de contacto con tu cliente potencial hasta el cierre del contrato. Definimos metodologías, secuencias de ventas, guiones de llamadas, criterios de cualificación, etapas del ciclo de ventas y las mejores prácticas para gestionar objeciones. Un manual completo que tu equipo puede replicar, escalar y mejorar con el tiempo.</p>
     <ul class="service-features">
-      <li>Auditoría del ciclo de ventas actual</li>
-      <li>Diseño del proceso comercial paso a paso</li>
-      <li>Definición de etapas, criterios de avance y KPIs</li>
-      <li>Playbooks de ventas para todo el equipo</li>
-      <li>Implementación y acompañamiento continuo</li>
+      <li>Mapeo y diseño del ciclo de ventas completo</li>
+      <li>Criterios de cualificación y etapas del pipeline</li>
+      <li>Guiones de prospección, seguimiento y cierre</li>
+      <li>Gestión de objeciones por perfil de cliente</li>
+      <li>Contratación y onboarding de nuevos comerciales</li>
     </ul>
-    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Mejorar mi proceso →</a>
+    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Construir mi Playbook →</a>
   </div>
 </div>
 </div>
 
-<div class="section-divider"></div>
 <div class="service-section-white">
 <div class="service-detail" id="s3">
-  <div class="service-detail-img"><span class="img-icon">🎓</span></div>
+  <div class="service-detail-img"><img src="Images/Mentoria de ventas b2b.png" alt="Mentoría de Ventas B2B"/></div>
   <div class="service-detail-content">
-    <span class="service-tag">Formación de equipos</span>
-    <h2>Vendedores que entienden, convencen y cierran</h2>
-    <p>La formación comercial práctica marca la diferencia. Entreno a equipos en técnicas de venta consultiva, manejo de objeciones y negociación con foco en resultados reales.</p>
+    <h2>Consultas Puntuales 1:1</h2>
+    <p>A veces no necesitas un proyecto grande para llegar más lejos. Tal vez sólo necesitas una perspectiva experta en el momento adecuado. Si tienes una duda concreta, un problema que no sabes cómo resolver o un objetivo de ventas B2B que quieres alcanzar, estas sesiones están diseñadas para ti. En 1 hora por videollamada, vamos directamente al grano: analizamos tu situación, identificamos el bloqueo y definimos los pasos a seguir. Cada sesión es 100% personalizada y orientada a la acción.</p>
     <ul class="service-features">
-      <li>Formación en venta consultiva B2B</li>
-      <li>Técnicas de manejo de objeciones en frío</li>
-      <li>Cierre y negociación avanzada</li>
-      <li>Role plays y simulaciones con casos reales</li>
-      <li>Formatos: talleres presenciales o mentoría online</li>
+      <li>Sesiones de 1 hora por videollamada</li>
+      <li>Diagnóstico rápido y plan de acción concreto</li>
+      <li>Escoge cuántas sesiones necesitas</li>
+      <li>Ideal para resolver bloqueos puntuales en ventas B2B</li>
+      <li>Disponibilidad flexible y respuesta ágil</li>
+    </ul>
+    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Reservar una sesión →</a>
+  </div>
+</div>
+</div>
+
+<div class="service-section-gray">
+<div class="service-detail reverse" id="s4">
+  <div class="service-detail-img"><img src="Images/Formacion de ventas B2B.png" alt="Formación de Ventas B2B"/></div>
+  <div class="service-detail-content">
+    <h2>Formación de Ventas B2B</h2>
+    <p>Un equipo que sabe vender es el activo más valioso de cualquier empresa. Diseño formaciones prácticas y totalmente personalizadas para equipos comerciales, enfocadas en las habilidades que realmente marcan la diferencia en entornos B2B. Trabajamos la escucha activa, la persuasión, la comunicación asertiva, la gestión de objeciones y el dominio de las herramientas comerciales más relevantes. El enfoque es 100% aplicable: sin teoría vacía, con ejercicios reales y dinámicas adaptadas a tu sector y tu equipo.</p>
+    <ul class="service-features">
+      <li>Formación personalizada según el perfil y nivel del equipo</li>
+      <li>Escucha activa, persuasión y comunicación asertiva</li>
+      <li>Gestión de objeciones y técnicas de cierre</li>
+      <li>Dominio de herramientas y CRM comerciales</li>
+      <li>Dinámicas prácticas con casos reales de tu sector</li>
     </ul>
     <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Formar a mi equipo →</a>
   </div>
 </div>
 </div>
 
-<div class="section-divider"></div>
-<div class="service-section-gray">
-<div class="service-detail reverse" id="s4">
-  <div class="service-detail-img"><span class="img-icon">🛠️</span></div>
-  <div class="service-detail-content">
-    <span class="service-tag">Herramientas &amp; CRM</span>
-    <h2>El stack tecnológico que necesitas, implementado</h2>
-    <p>Selecciono, configuro y formo a tu equipo en las herramientas de ventas adecuadas para tu modelo de negocio: CRM, automatización, prospección y análisis de datos.</p>
-    <ul class="service-features">
-      <li>Selección del CRM adecuado para tu equipo</li>
-      <li>Implementación y configuración personalizada</li>
-      <li>Automatización de tareas repetitivas</li>
-      <li>Herramientas de prospección y enriquecimiento</li>
-      <li>Formación práctica en el uso del stack</li>
-    </ul>
-    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Optimizar mis herramientas →</a>
-  </div>
-</div>
-</div>
-
-<div class="section-divider"></div>
 <div class="service-section-white">
 <div class="service-detail" id="s5">
-  <div class="service-detail-img"><span class="img-icon">📊</span></div>
+  <div class="service-detail-img"><img src="Images/Fractional Head of Sales.png" alt="Acompañamiento Personalizado"/></div>
   <div class="service-detail-content">
-    <span class="service-tag">Gestión comercial</span>
-    <h2>Dirección de ventas sin contratar a un Sales Director</h2>
-    <p>Para empresas que necesitan liderazgo comercial experto sin el coste de una contratación senior. Me integro como fractional Sales Manager: fijo objetivos, lidero reuniones y hago seguimiento de resultados.</p>
+    <h2>Acompañamiento Personalizado</h2>
+    <p>Cada empresa es un mundo, y hay situaciones que requieren algo más que un servicio estándar. Si estás lanzando un nuevo producto, explorando un nuevo mercado, necesitas reforzar a tu equipo comercial o simplemente quieres acelerar tus ventas, trabajamos juntos en el formato que mejor se adapte a tu caso. Definimos objetivos, alcance y metodología de forma conjunta, con el nivel de implicación y seguimiento que tu proyecto necesita.</p>
     <ul class="service-features">
-      <li>Fractional Sales Manager a medida</li>
-      <li>Definición de OKRs y KPIs comerciales</li>
-      <li>Reuniones de pipeline y seguimiento semanal</li>
-      <li>Coaching individual a tu equipo commercial</li>
-      <li>Reporting ejecutivo para dirección y board</li>
+      <li>Proyectos a medida según tu reto comercial</li>
+      <li>Apoyo en lanzamientos de producto o nuevos mercados</li>
+      <li>Construcción de tu propio equipo de ventas desde cero</li>
+      <li>Refuerzo y soporte al equipo de ventas existente</li>
+      <li>Seguimiento continuo con revisiones periódicas</li>
     </ul>
-    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Necesito este servicio →</a>
+    <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" class="service-btn">Hablemos de tu proyecto →</a>
   </div>
 </div>
 </div>
 
 <section class="process">
   <h2>Cómo trabajamos juntos</h2>
-  <p class="process-sub">Un proceso estructurado para que cada sesión tenga impacto real en tu negocio.</p>
+  <p class="process-sub">Un proceso estructurado para garantizar impacto real en tu negocio.</p>
   <div class="process-steps">
     <div class="process-step">
       <div class="process-connector"></div>
       <div class="step-num">01</div>
       <div class="step-title">Diagnóstico</div>
-      <div class="step-desc">Analizamos tu situación comercial actual: equipo, proceso, métricas y puntos clave de mejora.</div>
+      <div class="step-desc">En una sesión gratuita de 30 minutos, analizaré tu situación comercial actual: recursos, proceso, métricas y puntos clave de mejora.</div>
     </div>
     <div class="process-step">
       <div class="process-connector"></div>
       <div class="step-num">02</div>
       <div class="step-title">Propuesta</div>
-      <div class="step-desc">Diseñamos un plan de acción específico para tu empresa, con hitos y resultados esperados.</div>
+      <div class="step-desc">A través de una propuesta detallada, te propondré un plan de acción específico para tu empresa con fases, duración y resultados esperados.</div>
     </div>
     <div class="process-step">
       <div class="process-connector"></div>
       <div class="step-num">03</div>
       <div class="step-title">Ejecución</div>
-      <div class="step-desc">Implementamos juntos: formación, herramientas, procesos y seguimiento continuo.</div>
+      <div class="step-desc">Una vez acordado el tipo de apoyo o acompañamiento que necesitas, me pondré manos a la obra: formación, herramientas, procesos y seguimiento continuo, según tus necesidades.</div>
     </div>
     <div class="process-step">
       <div class="step-num">04</div>
       <div class="step-title">Resultados</div>
-      <div class="step-desc">Medimos el impacto real y ajustamos para maximizar el crecimiento sostenible.</div>
+      <div class="step-desc">En distintas fases del proceso revisaremos el progreso del proyecto analizando métricas clave, y haremos los ajustes necesarios para maximizar el crecimiento sostenible.</div>
     </div>
   </div>
 </section>
@@ -376,8 +361,7 @@ a{text-decoration:none;}
 <section class="faq-section">
   <div class="faq-inner">
     <div class="faq-header">
-      <h2>Preguntas frecuentes</h2>
-      <p>Lo que suelen preguntarme antes de empezar.</p>
+      <h2>¿Tienes dudas?</h2>
     </div>
     <div class="faq-list" id="faq-list">
       <div class="faq-item">
@@ -392,7 +376,7 @@ a{text-decoration:none;}
           <span class="faq-question-text">¿Trabajo con empresas que acaban de lanzarse o solo con equipos ya formados?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </div>
-        <div class="faq-answer"><div class="faq-answer-inner">Trabajo con ambos perfiles. Para startups en fase temprana, el foco suele estar en construir el primer proceso comercial y validar el ICP. Para empresas con equipo comercial ya activo, el trabajo se centra en optimizar el proceso, elevar la conversión y formar a los vendedores.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Trabajo con ambos perfiles. Para startups en fase temprana o PYMEs, el foco suele estar en construir el primer proceso comercial, validar el ICP, y en algunos casos montar el equipo comercial desde cero. Para empresas con equipo comercial ya activo, el trabajo se centra en optimizar el proceso, elevar la conversión y formar a los vendedores. En algunos casos, también trabajo con freelancers que tienen claro que quieren escalar sus ventas.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
@@ -406,50 +390,41 @@ a{text-decoration:none;}
           <span class="faq-question-text">¿Trabajas de forma presencial o remota?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </div>
-        <div class="faq-answer"><div class="faq-answer-inner">Principalmente trabajo de forma remota, lo que me permite colaborar con empresas de cualquier parte de España. Para proyectos que requieran presencialidad, como talleres con el equipo, también lo podemos organizar.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Principalmente trabajo de forma remota, lo que me permite colaborar con empresas de cualquier parte de España.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-question">
           <span class="faq-question-text">¿Qué tipo de empresas se benefician más de tu consultoría?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </div>
-        <div class="faq-answer"><div class="faq-answer-inner">Startups y PYMEs B2B de entre 5 y 100 empleados que quieren profesionalizar su área comercial. Especialmente empresas de tecnología, software SaaS, servicios profesionales y consultoras que venden a otras empresas y quieren hacer crecer sus ventas de forma predecible.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Startups y PYMEs B2B de entre 5 y 80 empleados que quieren profesionalizar su área comercial. Especialmente empresas de tecnología, software SaaS, servicios profesionales y consultoras que venden a otras empresas y quieren hacer crecer sus ventas de forma predecible.</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
-  <h2>¿Listo para transformar tus ventas?</h2>
+  <h2>¡Pasemos al siguiente paso!</h2>
   <p class="cta-sub">Cuéntame tu reto y vemos juntos cómo puedo ayudarte. Primera llamada sin coste ni compromiso.</p>
+  <a href="https://calendar.app.google/7yohLeP9wpNkjZ8F8" target="_blank" style="display:inline-block;background:#000;color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:15px 28px;border-radius:50px;text-decoration:none;margin-bottom:52px;transition:transform .18s ease,box-shadow .18s ease;">¡Hablemos!</a>
   <div class="cta-form">
-    <h3>Escríbeme y te contacto en 24h</h3>
+    <h3>O déjame un mensaje si lo prefieres</h3>
     <div class="form-grid">
       <div class="form-group">
         <label>Nombre</label>
-        <input type="text" placeholder="Tu nombre"/>
+        <input type="text"/>
       </div>
       <div class="form-group">
         <label>Empresa</label>
-        <input type="text" placeholder="Nombre de la empresa"/>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="tu@empresa.com"/>
-      </div>
-      <div class="form-group">
-        <label>Equipo de ventas</label>
-        <select>
-          <option value="">Selecciona tamaño</option>
-          <option>Solo yo (founder)</option>
-          <option>2–5 personas</option>
-          <option>6–15 personas</option>
-          <option>+15 personas</option>
-        </select>
+        <input type="text"/>
       </div>
       <div class="form-group full">
-        <label>¿Cuál es tu mayor reto comercial ahora mismo?</label>
-        <textarea placeholder="Cuéntame brevemente qué quieres mejorar en tus ventas…"></textarea>
+        <label>E-mail</label>
+        <input type="email"/>
+      </div>
+      <div class="form-group full">
+        <label>¿En qué puedo ayudarte?</label>
+        <textarea></textarea>
       </div>
     </div>
     <button class="form-submit" type="button">Enviar mensaje →</button>
@@ -499,7 +474,7 @@ hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('open');
 });
 
-const words = ['más y mejor.','con un proceso.','con método claro.','de forma predecible.','sin improvisar.'];
+const words = ['con tecnología punta.','con un proceso.','con método claro.','de forma predecible.','sin improvisar.'];
 let wi = 0;
 const dynEl = document.getElementById('dynamic-word');
 function animateWord() {
