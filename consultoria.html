@@ -44,6 +44,15 @@ a{text-decoration:none;}
 .hero-logos-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
 .logo-pill{background:#f5f5f5;border-radius:8px;padding:10px 20px;font-size:12px;font-weight:700;color:#999;letter-spacing:.05em;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.carousel-outer{overflow:hidden;width:100%;padding:8px 0;}
+.carousel-track{display:flex;gap:24px;will-change:transform;}
+.tst-card{flex:0 0 340px;background:#fff;border:1.5px solid #e8e8e8;border-radius:12px;padding:28px 24px;transition:box-shadow .2s;}
+.tst-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.09);}
+.tst-avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;}
+.tst-name{font-size:15px;font-weight:700;text-align:center;margin-bottom:3px;}
+.tst-role{font-size:11px;text-align:center;color:#aaa;margin-bottom:8px;font-weight:500;}
+.tst-stars{text-align:center;font-size:14px;margin-bottom:12px;color:#f66f19;letter-spacing:2px;}
+.tst-text{font-size:13px;line-height:1.75;color:#555;text-align:center;}
 .services-intro{background:#f9f9f9;padding:80px 56px;text-align:center;}
 .services-intro h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#000;margin-bottom:16px;}
 .services-intro p{font-size:16px;color:#666;max-width:600px;margin:0 auto;line-height:1.7;}
@@ -361,67 +370,8 @@ a{text-decoration:none;}
   </div>
 </section>
 
-<section class="casos">
-  <h2>Lo que dicen quienes ya trabajaron conmigo</h2>
-  <p class="casos-sub">Resultados reales en empresas B2B que querían vender más y mejor.</p>
-  <div class="casos-track-wrap">
-    <div class="casos-track" id="casos-track">
-      <div class="caso-card">
-        <div class="caso-quote">"</div>
-        <p class="caso-text">Sonia transformó por completo la manera en que nuestro equipo entiende y ejecuta las ventas. En tres meses pasamos de tener un proceso difuso a uno claro, medible y que todo el equipo sigue.</p>
-        <div class="caso-author">
-          <div class="caso-avatar">MR</div>
-          <div>
-            <div class="caso-name">Marc Ruiz</div>
-            <div class="caso-role">CEO · SaaS B2B, Barcelona</div>
-          </div>
-        </div>
-        <div class="caso-result">+40% tasa de conversión en 90 días</div>
-      </div>
-      <div class="caso-card">
-        <div class="caso-quote">"</div>
-        <p class="caso-text">Llevábamos meses sin entender por qué perdíamos deals en la fase de propuesta. Con Sonia identificamos el problema en la primera sesión y lo solucionamos en dos semanas.</p>
-        <div class="caso-author">
-          <div class="caso-avatar">LP</div>
-          <div>
-            <div class="caso-name">Laura Pérez</div>
-            <div class="caso-role">Sales Director · Fintech, Madrid</div>
-          </div>
-        </div>
-        <div class="caso-result">Ciclo de venta reducido un 30%</div>
-      </div>
-      <div class="caso-card">
-        <div class="caso-quote">"</div>
-        <p class="caso-text">La formación en venta consultiva fue un antes y un después para nuestros AEs. Ahora tienen un método claro para descubrir el pain real del cliente y conectarlo con nuestra solución.</p>
-        <div class="caso-author">
-          <div class="caso-avatar">JM</div>
-          <div>
-            <div class="caso-name">Jordi Mas</div>
-            <div class="caso-role">Head of Sales · HR Tech, Valencia</div>
-          </div>
-        </div>
-        <div class="caso-result">5 AEs formados y activados en 4 semanas</div>
-      </div>
-      <div class="caso-card">
-        <div class="caso-quote">"</div>
-        <p class="caso-text">Implementamos un CRM desde cero y Sonia se aseguró de que todo el equipo lo adoptara. No solo lo configuró — nos enseñó a sacarle partido desde el primer día.</p>
-        <div class="caso-author">
-          <div class="caso-avatar">AL</div>
-          <div>
-            <div class="caso-name">Ana López</div>
-            <div class="caso-role">Founder · Consultora B2B, Bilbao</div>
-          </div>
-        </div>
-        <div class="caso-result">Adopción del CRM al 100% en 3 semanas</div>
-      </div>
-    </div>
-  </div>
-  <div class="casos-controls">
-    <button class="casos-btn" id="casos-prev">←</button>
-    <div class="casos-dots" id="casos-dots"></div>
-    <button class="casos-btn" id="casos-next">→</button>
-  </div>
-</section>
+<!-- TESTIMONIOS (mismo bloque que index.html; título personalizado aquí) -->
+<div id="testimonios-slot"></div>
 
 <section class="faq-section">
   <div class="faq-inner">
@@ -580,30 +530,49 @@ document.getElementById('faq-list').addEventListener('click', (e) => {
   if (!wasOpen) item.classList.add('open');
 });
 
-const track = document.getElementById('casos-track');
-const cards = Array.from(track.querySelectorAll('.caso-card'));
-const dotsWrap = document.getElementById('casos-dots');
-let current = 0;
-cards.forEach((_, i) => {
-  const d = document.createElement('button');
-  d.className = 'casos-dot' + (i === 0 ? ' active' : '');
-  d.addEventListener('click', () => goTo(i));
-  dotsWrap.appendChild(d);
-});
-function cardWidth() {
-  const gap = 24;
-  return cards[0].offsetWidth + gap;
-}
-function goTo(idx) {
-  current = Math.max(0, Math.min(idx, cards.length - 1));
-  track.style.transform = 'translateX(-' + (current * cardWidth()) + 'px)';
-  document.querySelectorAll('.casos-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-}
-document.getElementById('casos-prev').addEventListener('click', () => goTo(current - 1));
-document.getElementById('casos-next').addEventListener('click', () => goTo(current + 1));
-let autoInt = setInterval(() => goTo((current + 1) % cards.length), 4500);
-track.addEventListener('mouseenter', () => clearInterval(autoInt));
-track.addEventListener('mouseleave', () => { autoInt = setInterval(() => goTo((current + 1) % cards.length), 4500); });
+// ── Testimonios (misma sección que index.html) ──
+(async function() {
+  const slot = document.getElementById('testimonios-slot');
+  if (!slot) return;
+  try {
+    const res = await fetch('index.html', { cache: 'no-store' });
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const indexTrack = doc.getElementById('carousel-track');
+    const section = indexTrack ? indexTrack.closest('section') : null;
+    if (!section) return;
+
+    const cloned = section.cloneNode(true);
+    const title = cloned.querySelector('.section-title');
+    if (title) title.textContent = 'Lo que dicen quienes ya trabajaron conmigo';
+
+    slot.replaceWith(cloned);
+
+    // ── Carousel JS infinito (mismo comportamiento que index.html) ──
+    const track = document.getElementById('carousel-track');
+    if (!track) return;
+    const cardW = 340 + 24;
+    const half = 8; // 8 tarjetas originales (duplicadas en el HTML)
+    let pos = 0;
+    let paused = false;
+    const speed = 0.35;
+
+    track.addEventListener('mouseenter', () => paused = true);
+    track.addEventListener('mouseleave', () => paused = false);
+
+    function animate() {
+      if (!paused) {
+        pos += speed;
+        if (pos >= cardW * half) pos -= cardW * half;
+        track.style.transform = `translateX(-${pos}px)`;
+      }
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  } catch (e) {
+    // Silencioso: si falla el fetch (p.ej. abriendo como file://), no bloquea el resto
+  }
+})();
 </script>
 </body>
 </html>
