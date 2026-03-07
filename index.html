@@ -64,7 +64,7 @@
 .srv-title{font-size:clamp(19px,2.1vw,30px);font-weight:600;color:#1e1e1e;margin-bottom:12px;line-height:1.2;}
 .srv-sub{font-size:15px;color:#888;margin-bottom:48px;max-width:540px;line-height:1.7;}
 .srv-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(16px,3vw,48px);align-items:start;}
-.srv-panels{min-width:0;}
+.srv-panels{min-width:0;display:grid;}
 .srv-tabs-col{min-width:0;}
 
 /* tabs */
@@ -85,14 +85,14 @@
 
 /* panel */
 .srv-panel{
-  display:none;opacity:0;transform:translateY(10px);
+  grid-area:1/1;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);
   background:#fff;border:1.5px solid #fdd4b3;
   border-radius:14px;padding:clamp(18px,3vw,36px) clamp(14px,2.5vw,32px);
   box-shadow:0 4px 20px rgba(246,111,25,.08);
-  transition:opacity .35s ease,transform .35s ease;
+  transition:opacity .35s ease,transform .35s ease,visibility 0s .35s;
   min-width:0;width:100%;box-sizing:border-box;
 }
-.srv-panel.active{display:block;opacity:1;transform:translateY(0);}
+.srv-panel.active{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .35s ease,transform .35s ease,visibility 0s 0s;}
 .srv-panel h2{font-size:clamp(15px,1.6vw,19px);font-weight:700;color:#1e1e1e;margin-bottom:14px;}
 .srv-panel p{font-size:clamp(13px,1.3vw,15px);color:#555;line-height:1.8;margin-bottom:6px;}
 .srv-infographic{margin-bottom:12px;display:flex;justify-content:center;width:100%;}
@@ -150,8 +150,8 @@
   .srv-tabs{display:none;}
   .srv-layout{grid-template-columns:1fr;}
   .srv-sub{margin-bottom:16px;}
-  .srv-panels{margin-top:0;}
-  .srv-panel{display:block;opacity:1;transform:none;transition:none;margin-top:16px;}
+  .srv-panels{margin-top:0;display:flex;flex-direction:column;}
+  .srv-panel{grid-area:unset;opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:none;margin-top:16px;}
   .srv-panel:first-child{margin-top:0;}
   .sonia-section{padding:48px 24px;}
   .sonia-inner{display:flex;flex-direction:column;gap:8px;}
@@ -593,20 +593,7 @@ setTimeout(() => {
 
   function activate(idx) {
     tabs.forEach((t,i) => t.classList.toggle('active', i === idx));
-    panels.forEach(p => {
-      p.style.opacity = '0';
-      p.style.transform = 'translateY(10px)';
-      setTimeout(() => p.classList.remove('active'), 200);
-    });
-    const panel = panels[idx];
-    setTimeout(() => {
-      panel.classList.add('active');
-      requestAnimationFrame(() => {
-        panel.style.transition = 'opacity .35s ease, transform .35s ease';
-        panel.style.opacity = '1';
-        panel.style.transform = 'translateY(0)';
-      });
-    }, 210);
+    panels.forEach((p,i) => p.classList.toggle('active', i === idx));
   }
 
   tabs.forEach((tab, i) => tab.addEventListener('mouseenter', () => activate(i)));
