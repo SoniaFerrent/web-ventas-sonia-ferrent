@@ -240,7 +240,7 @@
 <!-- TE ACOMPAÑO -->
 <section class="srv-section">
   <div class="srv-inner">
-    <div class="srv-title">Consultoría de Ventas, a tu medida.</div>
+    <h2 class="srv-title">Consultoría de Ventas, a tu medida.</h2>
     <div class="srv-sub">Desde la estrategia hasta la ejecución, trabajo contigo en las áreas que más impactan el crecimiento de tu negocio B2B.</div>
     <div class="srv-layout">
 
@@ -495,6 +495,7 @@
       <p class="form-title">O escríbeme un mensaje:</p>
       <p class="form-sub">Cuéntame tu situación y me aseguraré de encontrar la forma de ayudarte.</p>
       <form id="contact-form" action="https://formspree.io/f/mzdjbvly" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
         <div class="form-grid">
           <div class="form-row">
             <label for="nombre">Nombre</label>
@@ -552,7 +553,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Sonia Ferrer Rentero · Todos los derechos reservados</p>
+      <p>© 2026 Sonia Ferrer Rentero · Todos los derechos reservados</p>
       <a href="aviso-legal.html">Política de privacidad</a>
     </div>
     <p class="footer-seo">Estrategia de ventas B2B · Consultoría comercial para Startups · Formación de equipos comerciales · Consultoría de ventas SaaS</p>
@@ -648,45 +649,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     } else { btn.textContent = 'Error, intenta de nuevo'; btn.disabled = false; }
   } catch { btn.textContent = 'Error de red'; btn.disabled = false; }
 });
-</script>
-<script>
-// Start captacion animation when it enters the viewport
-(function(){
-  const canvas = document.getElementById('captacion-c');
-  if (!canvas) return;
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        observer.disconnect();
-        window._srvAnim = window._srvAnim || {};
-        const fn = window._srvAnim['captacion-c'];
-        if (fn) fn();
-      }
-    });
-  }, { threshold: 0.2 });
-  observer.observe(canvas);
-})();
-
-// Start remaining animations on first hover over their tab in the index
-(function(){
-  const map = {
-    '1': 'playbook-c',
-    '2': 'consultas-c',
-    '3': 'acomp-c',
-    '4': 'formacion-c'
-  };
-  document.querySelectorAll('.srv-tab[data-panel]').forEach(tab => {
-    const idx = tab.getAttribute('data-panel');
-    const canvasId = map[idx];
-    if (!canvasId) return;
-    tab.addEventListener('mouseenter', function onEnter() {
-      tab.removeEventListener('mouseenter', onEnter);
-      window._srvAnim = window._srvAnim || {};
-      const fn = window._srvAnim[canvasId];
-      if (fn) fn();
-    });
-  });
-})();
 </script>
 <script>
 // Hamburger menu
