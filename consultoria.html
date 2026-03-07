@@ -190,6 +190,7 @@ a{text-decoration:none;}
   .process-connector{display:none;}
   .casos{padding:72px 24px;}
   .caso-card{min-width:290px;max-width:290px;padding:28px 24px;}
+  .services-chips-bar{padding:12px 16px;}
   .faq-inner{padding:0 24px;}
   .cta-section{padding:72px 24px;}
   .cta-form{padding:32px 24px;}
@@ -263,7 +264,7 @@ a{text-decoration:none;}
   <div class="service-detail-img"><img src="Images/Sistema-de-captacion-b2b.webp" alt="Sistema de Captación B2B"/></div>
   <div class="service-detail-content">
     <h2>Diseño tu Sistema de Captación</h2>
-    <p>Muchas empresas dependen del boca a boca o de la suerte para conseguir nuevos clientes. Yo te ayudo a cambiar eso. Te ayudo a diseñar el sistema de captación que, según tu mercado y contexto, te ayude a llegar a tu cliente potencial de forma constante y sostenible. Combinamos estrategias de venta en frío, acciones inbound para atraer clientes de forma orgánica, y automatización inteligente que multiplica tu capacidad sin multiplicar tu esfuerzo.</p>
+    <p>Muchas empresas dependen del boca a boca o de la suerte para conseguir nuevos clientes. Yo te ayudo a cambiar eso. Te ayudo a diseñar el sistema de captación que, según tu mercado y contexto, te haga llegar a tu cliente potencial de forma constante y sostenible. Combino estrategias de venta en frío, acciones inbound para atraer clientes de forma orgánica, y automatización inteligente que multiplica tu capacidad sin multiplicar tu esfuerzo.</p>
     <ul class="service-features">
       <li>Definición de ICP y segmentación precisa del mercado</li>
       <li>Estrategia outbound multicanal: LinkedIn, email frío y llamadas</li>
@@ -542,8 +543,11 @@ const obs = new IntersectionObserver((entries) => {
 details.forEach(d => obs.observe(d));
 
 document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('mouseenter', () => item.classList.add('open'));
-  item.addEventListener('mouseleave', () => item.classList.remove('open'));
+  item.querySelector('.faq-question').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
 });
 
 // ── Testimonios (misma sección que index.html) ──
