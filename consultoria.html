@@ -254,8 +254,8 @@
 <div class="service-detail" id="s1">
   <div class="service-detail-img"><img src="Images/Sistema-de-captacion-b2b.webp" alt="Sistema de Captación B2B" loading="lazy"/></div>
   <div class="service-detail-content">
-    <h2>Diseño tu Sistema de Captación</h2>
-    <p>Muchas empresas dependen del boca a boca o de la suerte para conseguir nuevos clientes. Yo te ayudo a cambiar eso. Te ayudo a diseñar el sistema de generación de demanda que, según tu mercado y contexto, te haga llegar a tu cliente potencial de forma constante y sostenible. Combino estrategias de venta en frío, acciones inbound para atraer clientes de forma orgánica, y automatizaciones que multiplican tu capacidad sin multiplicar tu esfuerzo.</p>
+    <h2>Sistema de Captación y Growth</h2>
+    <p>Muchas empresas dependen del boca a boca o de esfuerzos comerciales poco predecibles para conseguir nuevos clientes. En este servicio diseño el sistema que te permite generar oportunidades comerciales de forma constante y sostenible. Analizo tu mercado, te ayudo a definir tu cliente ideal y construyo un sistema que combina outbound, inbound y automatización de procesos para alimentar tu embudo de ventas con nuevas oportunidades de forma sistemática.</p>
     <ul class="service-features">
       <li>Definición de ICP y segmentación precisa del mercado</li>
       <li>Estrategia growth y outbound multicanal</li>
@@ -549,7 +549,8 @@ document.querySelectorAll('.service-chip').forEach(chip => {
     if (!target) return;
     const nav = document.querySelector('.nav');
     const bar = document.getElementById('services-chips-bar');
-    const offset = (nav ? nav.offsetHeight : 0) + (bar ? bar.offsetHeight : 0) + 16;
+    const isMobile = window.innerWidth < 761;
+    const offset = (nav ? nav.offsetHeight : 0) + (isMobile ? 0 : (bar ? bar.offsetHeight : 0)) + 16;
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
   });
 });
