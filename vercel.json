@@ -1,6 +1,5 @@
 {
   "redirects": [
-    {"source": "/", "destination": "/inicio", "permanent": true},
     {"source": "/index.html", "destination": "/inicio", "permanent": true},
     {"source": "/consultoria.html", "destination": "/consultoria-de-ventas", "permanent": true},
     {"source": "/consultoriadeventas/", "destination": "/consultoria-de-ventas", "permanent": true},
