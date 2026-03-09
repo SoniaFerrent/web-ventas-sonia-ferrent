@@ -6,13 +6,32 @@
     {"source": "/sobre-mi.html", "destination": "/sonia-ferrer-rentero-consultora-de-ventas", "permanent": true},
     {"source": "/sonia-ferrer-rentero/", "destination": "/sonia-ferrer-rentero-consultora-de-ventas", "permanent": true},
     {"source": "/contacto.html", "destination": "/contacto", "permanent": true},
-    {"source": "/contact/", "destination": "/contacto", "permanent": true}
+    {"source": "/contact/", "destination": "/contacto", "permanent": true},
+    {"source": "/estrategia-de-ventas-y-growth.html", "destination": "/estrategia-de-ventas-y-growth", "permanent": true},
+    {"source": "/plan-de-ventas.html", "destination": "/plan-de-ventas", "permanent": true},
+    {"source": "/procesos-comerciales-y-automatizacion-de-ventas.html", "destination": "/procesos-comerciales-y-automatizacion-de-ventas", "permanent": true},
+    {"source": "/Procesos-comerciales-y-automatización-de-ventas", "destination": "/procesos-comerciales-y-automatizacion-de-ventas", "permanent": true},
+    {"source": "/funnel-de-ventas.html", "destination": "/funnel-de-ventas", "permanent": true},
+    {"source": "/estrategias-de-generacion-de-demanda.html", "destination": "/estrategias-de-generacion-de-demanda", "permanent": true},
+    {"source": "/formacion-comercial.html", "destination": "/formacion-comercial", "permanent": true},
+    {"source": "/consultoria-de-ventas-saas.html", "destination": "/consultoria-de-ventas-saas", "permanent": true},
+    {"source": "/consultoria-de-ventas-para-pymes.html", "destination": "/consultoria-de-ventas-para-pymes", "permanent": true},
+    {"source": "/recursos-de-ventas.html", "destination": "/recursos-de-ventas", "permanent": true}
   ],
   "rewrites": [
     {"source": "/inicio", "destination": "/index.html"},
     {"source": "/consultoria-de-ventas", "destination": "/consultoria.html"},
     {"source": "/sonia-ferrer-rentero-consultora-de-ventas", "destination": "/sobre-mi.html"},
-    {"source": "/contacto", "destination": "/contacto.html"}
+    {"source": "/contacto", "destination": "/contacto.html"},
+    {"source": "/estrategia-de-ventas-y-growth", "destination": "/estrategia-de-ventas-y-growth.html"},
+    {"source": "/plan-de-ventas", "destination": "/plan-de-ventas.html"},
+    {"source": "/procesos-comerciales-y-automatizacion-de-ventas", "destination": "/procesos-comerciales-y-automatizacion-de-ventas.html"},
+    {"source": "/funnel-de-ventas", "destination": "/funnel-de-ventas.html"},
+    {"source": "/estrategias-de-generacion-de-demanda", "destination": "/estrategias-de-generacion-de-demanda.html"},
+    {"source": "/formacion-comercial", "destination": "/formacion-comercial.html"},
+    {"source": "/consultoria-de-ventas-saas", "destination": "/consultoria-de-ventas-saas.html"},
+    {"source": "/consultoria-de-ventas-para-pymes", "destination": "/consultoria-de-ventas-para-pymes.html"},
+    {"source": "/recursos-de-ventas", "destination": "/recursos-de-ventas.html"}
   ],
   "headers": [
     {
