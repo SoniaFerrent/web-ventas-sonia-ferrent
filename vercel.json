@@ -16,7 +16,8 @@
     {"source": "/formacion-comercial.html", "destination": "/formacion-comercial", "permanent": true},
     {"source": "/consultoria-de-ventas-saas.html", "destination": "/consultoria-de-ventas-saas", "permanent": true},
     {"source": "/consultoria-de-ventas-para-pymes.html", "destination": "/consultoria-de-ventas-para-pymes", "permanent": true},
-    {"source": "/recursos-de-ventas.html", "destination": "/recursos-de-ventas", "permanent": true}
+    {"source": "/recursos-de-ventas.html", "destination": "/recursos-de-ventas", "permanent": true},
+    {"source": "/aviso-legal.html", "destination": "/aviso-legal", "permanent": true}
   ],
   "rewrites": [
     {"source": "/inicio", "destination": "/index.html"},
@@ -31,7 +32,8 @@
     {"source": "/formacion-comercial", "destination": "/formacion-comercial.html"},
     {"source": "/consultoria-de-ventas-saas", "destination": "/consultoria-de-ventas-saas.html"},
     {"source": "/consultoria-de-ventas-para-pymes", "destination": "/consultoria-de-ventas-para-pymes.html"},
-    {"source": "/recursos-de-ventas", "destination": "/recursos-de-ventas.html"}
+    {"source": "/recursos-de-ventas", "destination": "/recursos-de-ventas.html"},
+    {"source": "/aviso-legal", "destination": "/aviso-legal.html"}
   ],
   "headers": [
     {

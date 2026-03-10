@@ -34,6 +34,10 @@
 </script>
 <style>
 .page{max-width:920px;margin:0 auto;padding:72px 56px 96px;}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:#8a8a8a;margin-bottom:18px;}
+.breadcrumb a{color:#666;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb-sep{color:#c2c2c2;}
 .eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f66f19;background:#fff3eb;padding:7px 12px;border-radius:999px;margin-bottom:18px;}
 .page h1{font-size:clamp(24px,2.7vw,40px);font-weight:800;color:#000;line-height:1.15;margin-bottom:20px;}
 .updated{font-size:12px;color:#8a8a8a;margin:-8px 0 24px;}
@@ -58,7 +62,7 @@
 
 <nav class="nav">
   <a href="/inicio" class="nav-brand">
-    <img src="Images/Logo.webp" alt="Logotipo de Ventas con Sonia Ferrent, consultoría de ventas B2B" width="36" height="36" decoding="async"/>
+    <img src="Images/Logo.webp" alt="Logotipo de Ventas con Sonia Ferrent" width="36" height="36" decoding="async"/>
     Ventas con Sonia Ferrent
   </a>
   <div class="nav-right">
@@ -83,6 +87,13 @@
 </nav>
 
 <main class="page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/inicio">Inicio</a>
+    <span class="breadcrumb-sep">&gt;</span>
+    <a href="/recursos-de-ventas">Recursos de ventas</a>
+    <span class="breadcrumb-sep">&gt;</span>
+    <span aria-current="page">Formación comercial</span>
+  </nav>
   <span class="eyebrow">Recurso B2B</span>
   <h1>Formación comercial</h1>
   <p class="updated">Última actualización: 9 de marzo de 2026</p>
@@ -91,7 +102,7 @@
   <section class="article-section">
     <h2>Por qué la formación comercial es clave para equipos B2B</h2>
     <p>En muchas startups y PYMEs B2B, los equipos comerciales aprenden principalmente a través de la experiencia o la improvisación. Aunque esto puede funcionar en las primeras etapas, con el crecimiento del negocio se vuelve necesario estructurar el conocimiento comercial, definir buenas prácticas y desarrollar habilidades clave de venta.</p>
-    <p>Una formación comercial bien diseñada ayuda al equipo a entender mejor el proceso de ventas y a trabajar de forma más consistente. Además, permite alinear a todos los vendedores con el mismo enfoque comercial, el mismo discurso y los mismos criterios para cualificar oportunidades.</p>
+    <p>Una formación comercial bien diseñada ayuda al equipo a entender mejor el proceso de ventas y a trabajar de forma más consistente. Además, permite alinear a todos los vendedores con el mismo enfoque comercial, el mismo discurso y los mismos criterios para cualificar oportunidades. Cuando esta formación se apoya en un <a href="/plan-de-ventas" target="_blank" rel="noopener noreferrer">plan de ventas</a> claro, el impacto sobre el rendimiento comercial suele ser mucho mayor.</p>
   </section>
 
   <section class="article-section">
@@ -129,7 +140,7 @@
           <li><a href="/consultoria-de-ventas">Consultoría de Ventas</a></li>
           <li><a href="/sonia-ferrer-rentero-consultora-de-ventas">Sobre mí</a></li>
           <li><a href="/contacto">Contacto</a></li>
-          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -157,7 +168,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Sonia Ferrer Rentero · Todos los derechos reservados</p>
-      <a href="aviso-legal.html">Política de privacidad</a>
+      <a href="/aviso-legal">Política de privacidad</a>
     </div>
   </div>
 </footer>

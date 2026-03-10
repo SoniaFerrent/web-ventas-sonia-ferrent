@@ -34,6 +34,10 @@
 </script>
 <style>
 .page{max-width:920px;margin:0 auto;padding:72px 56px 96px;}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:#8a8a8a;margin-bottom:18px;}
+.breadcrumb a{color:#666;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb-sep{color:#c2c2c2;}
 .eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f66f19;background:#fff3eb;padding:7px 12px;border-radius:999px;margin-bottom:18px;}
 .page h1{font-size:clamp(24px,2.7vw,40px);font-weight:800;color:#000;line-height:1.15;margin-bottom:20px;}
 .updated{font-size:12px;color:#8a8a8a;margin:-8px 0 24px;}
@@ -57,7 +61,7 @@
 
 <nav class="nav">
   <a href="/inicio" class="nav-brand">
-    <img src="Images/Logo.webp" alt="Logotipo de Ventas con Sonia Ferrent, consultoría de ventas B2B" width="36" height="36" decoding="async"/>
+    <img src="Images/Logo.webp" alt="Logotipo de Ventas con Sonia Ferrent" width="36" height="36" decoding="async"/>
     Ventas con Sonia Ferrent
   </a>
   <div class="nav-right">
@@ -82,6 +86,13 @@
 </nav>
 
 <main class="page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/inicio">Inicio</a>
+    <span class="breadcrumb-sep">&gt;</span>
+    <a href="/recursos-de-ventas">Recursos de ventas</a>
+    <span class="breadcrumb-sep">&gt;</span>
+    <span aria-current="page">Estrategia de ventas y Growth B2B</span>
+  </nav>
   <span class="eyebrow">Recurso B2B</span>
   <h1>Estrategia de ventas y Growth B2B</h1>
   <p class="updated">Última actualización: 9 de marzo de 2026</p>
@@ -95,8 +106,8 @@
   <section class="article-section">
     <h2>Cómo construir una estrategia de Ventas y Growth</h2>
     <p>El primer paso suele ser definir con precisión el perfil de cliente ideal (ICP) y segmentar el mercado. Esto permite enfocar los esfuerzos comerciales en los clientes con mayor probabilidad de compra y diseñar un mensaje de valor claro para cada segmento.</p>
-    <p>A partir de ahí, se diseña el embudo de ventas completo, identificando cómo una empresa atrae, cualifica y convierte oportunidades. Esto incluye definir los canales de captación más eficaces, estructurar las fases del proceso comercial y establecer métricas que permitan medir el rendimiento del embudo de ventas.</p>
-    <p>La estrategia Growth complementa este proceso incorporando una mentalidad de experimentación y mejora continua. Se prueban distintos canales de generación de demanda, mensajes comerciales y procesos de conversión para identificar qué acciones generan más oportunidades y mejores resultados.</p>
+    <p>A partir de ahí, se diseña el <a href="/funnel-de-ventas" target="_blank" rel="noopener noreferrer">embudo de ventas</a> completo, identificando cómo una empresa atrae, cualifica y convierte oportunidades. Esto incluye definir los canales de captación más eficaces, estructurar las fases del proceso comercial y establecer métricas que permitan medir el rendimiento del embudo de ventas.</p>
+    <p>La estrategia Growth complementa este proceso incorporando una mentalidad de experimentación y mejora continua. Se prueban distintos canales de <a href="/estrategias-de-generacion-de-demanda" target="_blank" rel="noopener noreferrer">generación de demanda</a>, mensajes comerciales y procesos de conversión para identificar qué acciones generan más oportunidades y mejores resultados.</p>
   </section>
 
   <section class="article-section">
@@ -131,7 +142,7 @@
           <li><a href="/consultoria-de-ventas">Consultoría de Ventas</a></li>
           <li><a href="/sonia-ferrer-rentero-consultora-de-ventas">Sobre mí</a></li>
           <li><a href="/contacto">Contacto</a></li>
-          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -159,7 +170,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Sonia Ferrer Rentero · Todos los derechos reservados</p>
-      <a href="aviso-legal.html">Política de privacidad</a>
+      <a href="/aviso-legal">Política de privacidad</a>
     </div>
   </div>
 </footer>
