@@ -162,6 +162,19 @@
 .form-check label{font-size:12px;color:#888;line-height:1.6;cursor:pointer;}
 .form-check label a{color:#f66f19;}
 
+/* ── RECURSOS ── */
+.resources-home{background:#fff;padding:clamp(48px,5vw,72px) 56px;border-top:1px solid #f0f0f0;}
+.resources-home-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px;align-items:stretch;}
+.resources-home-intro{padding-right:18px;}
+.resources-home-kicker{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f66f19;background:#fff3eb;padding:7px 12px;border-radius:999px;margin-bottom:18px;}
+.resources-home-intro h2{font-size:clamp(22px,2.3vw,34px);font-weight:600;line-height:1.2;margin-bottom:16px;}
+.resources-home-intro p{font-size:15px;color:#555;line-height:1.8;margin-bottom:22px;max-width:420px;}
+.resource-home-card{border:1px solid #ececec;border-radius:18px;padding:24px;background:linear-gradient(180deg,#fff 0%,#fafafa 100%);display:flex;flex-direction:column;justify-content:space-between;min-height:100%;}
+.resource-home-card h3{font-size:20px;font-weight:700;line-height:1.25;color:#111;margin-bottom:12px;}
+.resource-home-card p{font-size:14px;color:#666;line-height:1.75;margin-bottom:18px;}
+.resource-home-card .btn{margin-top:auto;text-align:center;}
+.resource-home-card--accent{background:linear-gradient(135deg,#fff7f1 0%,#fff 100%);border-color:#f3d4be;}
+
 /* ── SONIA ── */
 .sonia-section{background:#fff;padding:clamp(48px,5vw,72px) 56px;border-top:1px solid #f0f0f0;}
 .sonia-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;grid-template-areas:"img content" "img cta";gap:0 56px;}
@@ -184,6 +197,10 @@
   .srv-panel:first-child{margin-top:0;}
   .srv-tabs-col{order:2;display:flex;align-items:center;width:100%;}
   .srv-tab-cta{margin-top:0;align-self:center;}
+  .resources-home{padding:48px 24px;}
+  .resources-home-grid{grid-template-columns:1fr;gap:16px;}
+  .resources-home-intro{padding-right:0;text-align:center;}
+  .resources-home-intro p{max-width:none;}
   .sonia-section{padding:48px 24px;}
   .sonia-inner{display:flex;flex-direction:column;gap:8px;}
   .sonia-content{order:1;padding-bottom:0;text-align:center;}
@@ -571,6 +588,31 @@
   </div>
 </section>
 
+<section class="resources-home">
+  <div class="resources-home-grid">
+    <div class="resources-home-intro">
+      <span class="resources-home-kicker">Recursos</span>
+      <h2>Guías para estructurar ventas y growth</h2>
+      <p>Si quieres profundizar en estrategia comercial, IA aplicada a ventas o growth para startups, aquí tienes tres recursos prácticos para seguir avanzando.</p>
+      <a href="/recursos-de-ventas" class="btn btn-black">Ver todos los recursos</a>
+    </div>
+    <article class="resource-home-card resource-home-card--accent">
+      <div>
+        <h3>Cómo aplicar IA en ventas, marketing y growth</h3>
+        <p>Integra herramientas de inteligencia artificial en prospección, CRM, análisis comercial y generación de demanda sin perder el criterio humano.</p>
+      </div>
+      <a href="/IA-en-ventas-y-growth" class="btn btn-orange">Leer recurso</a>
+    </article>
+    <article class="resource-home-card">
+      <div>
+        <h3>Consultoría Growth para Startups</h3>
+        <p>Descubre cómo convertir experimentación, marketing, ventas y datos en un sistema de crecimiento más predecible para tu startup.</p>
+      </div>
+      <a href="/consultoria-growth-para-startups" class="btn btn-orange">Leer recurso</a>
+    </article>
+  </div>
+</section>
+
 <!-- CTA + FORMULARIO (mismo fondo) -->
 <section class="cta-form-section">
   <div class="cta-form-inner">
@@ -648,8 +690,10 @@
           <li><a href="/funnel-de-ventas">Optimización del funnel de ventas</a></li>
           <li><a href="/estrategias-de-generacion-de-demanda">Estrategias de generación de demanda</a></li>
           <li><a href="/formacion-comercial">Formación comercial</a></li>
+          <li><a href="/IA-en-ventas-y-growth">Cómo aplicar IA en ventas, marketing y growth</a></li>
           <li><a href="/consultoria-de-ventas-saas">Consultoría de ventas SaaS</a></li>
           <li><a href="/consultoria-de-ventas-para-pymes">Consultoría de ventas para PYMEs</a></li>
+          <li><a href="/consultoria-growth-para-startups">Consultoría Growth para Startups</a></li>
         </ul>
       </div>
     </div>
