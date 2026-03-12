@@ -6,6 +6,7 @@
     {"source": "/sobre-mi.html", "destination": "/sonia-ferrer-rentero-consultora-de-ventas", "permanent": true},
     {"source": "/sonia-ferrer-rentero/", "destination": "/sonia-ferrer-rentero-consultora-de-ventas", "permanent": true},
     {"source": "/contacto.html", "destination": "/contacto", "permanent": true},
+    {"source": "/contacto/", "destination": "/contacto", "permanent": true},
     {"source": "/contact/", "destination": "/contacto", "permanent": true},
     {"source": "/estrategia-de-ventas-y-growth.html", "destination": "/estrategia-de-ventas-y-growth", "permanent": true},
     {"source": "/IA-en-ventas-y-growth.html", "destination": "/IA-en-ventas-y-growth", "permanent": true},

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /aviso-legal.html
 
-Sitemap: https://ventasconsoniaferrent.com/sitemap.xml
+Sitemap: https://www.ventasconsoniaferrent.com/sitemap.xml
