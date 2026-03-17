@@ -216,7 +216,10 @@
 }
 @media(max-width:480px){
   .pq-grid{grid-template-columns:1fr;}
-  .hero-kpis{gap:0;}
+  .hero-kpis{gap:0;flex-wrap:nowrap;}
+  .hero-kpi{width:auto;padding:0 10px;}
+  .hero-kpi-num{font-size:17px;}
+  .hero-kpi-label{font-size:8px;letter-spacing:0;}
 }
 
 /* ── FOOTER ── */
@@ -258,8 +261,9 @@
     <h1 id="hero-h1">Te ayudo a construir la estrategia de ventas que está a la altura.</h1>
     <div class="hero-kpis" id="hero-kpis">
       <div class="hero-kpi"><div class="hero-kpi-num kpi-n1">0+</div><div class="hero-kpi-label">Negocios impulsados</div></div>
-      <div class="hero-kpi"><div class="hero-kpi-num kpi-n2">0+</div><div class="hero-kpi-label">Personas formadas</div></div>
-      <div class="hero-kpi"><div class="hero-kpi-num kpi-n3">+0</div><div class="hero-kpi-label">Mercados trabajados</div></div>
+      <div class="hero-kpi"><div class="hero-kpi-num kpi-n2">+0</div><div class="hero-kpi-label">Procesos implementados</div></div>
+      <div class="hero-kpi"><div class="hero-kpi-num kpi-n3">0+</div><div class="hero-kpi-label">Personas formadas</div></div>
+      <div class="hero-kpi"><div class="hero-kpi-num kpi-n4">+0</div><div class="hero-kpi-label">Mercados trabajados</div></div>
     </div>
     <a href="/consultoria-de-ventas" class="btn btn-black">Descubre la consultoría de ventas</a>
   </div>
@@ -683,8 +687,9 @@ setTimeout(() => {
     document.getElementById('hero-kpis').classList.add('visible');
     setTimeout(() => {
       animateCounter(document.querySelector('.kpi-n1'), 35, '', '+', 700);
-      animateCounter(document.querySelector('.kpi-n2'), 220, '', '+', 700);
-      animateCounter(document.querySelector('.kpi-n3'), 9, '+', '', 500);
+      animateCounter(document.querySelector('.kpi-n2'), 190, '+', '', 700);
+      animateCounter(document.querySelector('.kpi-n3'), 220, '', '+', 700);
+      animateCounter(document.querySelector('.kpi-n4'), 9, '+', '', 500);
     }, 150);
   }, 400);
 }, 800);
