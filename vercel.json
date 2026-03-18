@@ -21,6 +21,7 @@
     {"source": "/consultoria-de-ventas-saas.html", "destination": "/consultoria-de-ventas-saas", "permanent": true},
     {"source": "/consultoria-de-ventas-para-pymes.html", "destination": "/consultoria-de-ventas-para-pymes", "permanent": true},
     {"source": "/recursos-de-ventas.html", "destination": "/recursos-de-ventas", "permanent": true},
+    {"source": "/como-definir-icp-ventas-b2b.html", "destination": "/como-definir-icp-ventas-b2b", "permanent": true},
     {"source": "/aviso-legal.html", "destination": "/aviso-legal", "permanent": true}
   ],
   "rewrites": [
@@ -38,6 +39,7 @@
     {"source": "/consultoria-de-ventas-saas", "destination": "/consultoria-de-ventas-saas.html"},
     {"source": "/consultoria-de-ventas-para-pymes", "destination": "/consultoria-de-ventas-para-pymes.html"},
     {"source": "/recursos-de-ventas", "destination": "/recursos-de-ventas.html"},
+    {"source": "/como-definir-icp-ventas-b2b", "destination": "/como-definir-icp-ventas-b2b.html"},
     {"source": "/aviso-legal", "destination": "/aviso-legal.html"}
   ],
   "headers": [

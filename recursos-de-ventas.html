@@ -54,16 +54,20 @@
 .card p{margin-top:8px;font-size:13px;color:#666;line-height:1.6;max-width:none;}
 .card .btn{margin-top:12px;}
 .card-newsletter{width:100%;padding:24px;}
+.connect-grid .card-newsletter{display:flex;flex-direction:column;height:100%;}
 .card-newsletter .card-title{font-size:16px;}
 .card-newsletter p{font-size:13px;}
+.connect-grid .card-newsletter p{flex:1;}
 .card-newsletter .btn{background:#111;border-color:#111;color:#fff;}
 .card-newsletter .btn:hover{background:#000;border-color:#000;}
-.cta-box{margin-top:30px;padding:24px;border:1px solid #ececec;border-radius:14px;background:#fafafa;}
+.connect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px;}
+.cta-box{margin-top:-12px;padding:24px;border:1px solid #ececec;border-radius:14px;background:#fafafa;}
 .cta-box p{font-size:15px;color:#555;line-height:1.85;margin-bottom:16px;}
 @media(max-width:900px){
   .page{padding:56px 24px 80px;}
   .lead{font-size:16px;}
   .grid{grid-template-columns:1fr;}
+  .connect-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -103,11 +107,19 @@
   </nav>
   <span class="eyebrow">Recurso B2B</span>
   <h1>Recursos de ventas B2B</h1>
-  <p class="updated">Última actualización: 11 de marzo de 2026</p>
+  <p class="updated">Última actualización: 18 de marzo de 2026</p>
   <p class="lead">En esta sección encontrarás guías y contenidos prácticos sobre estrategia de ventas, generación de demanda y crecimiento comercial para empresas B2B. Son recursos pensados para ayudarte a entender mejor cómo estructurar tu proceso comercial, atraer más oportunidades y mejorar la conversión en tu embudo de ventas.</p>
 
   <section class="resources-section">
-    <h2>Guías de ventas B2B para estrategia comercial, funnel y captación de clientes</h2>
+    <h2>Plantillas de ventas B2B</h2>
+    <p>Recursos descargables para ayudarte a aterrizar decisiones comerciales con una estructura clara y accionable.</p>
+    <div class="grid">
+      <div class="card"><h3 class="card-title">[Plantilla gratuita] Cómo definir tu Perfil de Cliente Ideal en ventas B2B</h3><p>Con esta plantilla práctica lograrás definir tu cliente ideal y activar tu estrategia comercial.</p><a href="/como-definir-icp-ventas-b2b" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Descubre la plantilla ICP</a></div>
+    </div>
+  </section>
+
+  <section class="resources-section">
+    <h2>Guías de ventas B2B</h2>
     <p>Estos contenidos están diseñados para ayudarte a mejorar captación, conversión y organización comercial según la fase de crecimiento de tu empresa.</p>
     <div class="grid">
       <div class="card"><h3 class="card-title">Cómo definir una estrategia de ventas y growth B2B</h3><p>Sistema comercial para generar oportunidades de forma constante.</p><a href="/estrategia-de-ventas-y-growth" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Ver guía de estrategia de ventas</a></div>
@@ -129,10 +141,24 @@
   </div>
 
   <section class="resources-section">
-    <div class="card card-newsletter">
-      <h2 class="card-title">También puedes suscribirte a mi newsletter de ventas B2B</h2>
-      <p>Si lo haces, recibirás contenido actualizado sobre ventas B2B en tu bandeja de entrada, dos veces al mes.</p>
-      <a href="https://ventasconsoniaferrent.substack.com/about" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Suscribirme</a>
+    <h2>Conectemos</h2>
+    <p>Si quieres seguir aprendiendo, reservar una conversación o estar al día de nuevos recursos, aquí tienes tres formas rápidas de hacerlo.</p>
+    <div class="connect-grid">
+      <div class="card card-newsletter">
+        <h3 class="card-title">Reserva 30 minutos conmigo</h3>
+        <p>Cuéntame en qué punto está tu estrategia comercial y veamos juntos dónde desbloquear más tracción en tus ventas B2B.</p>
+        <a href="https://calendar.app.google/dxRHFujTJHW19EMg6" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Agendar llamada</a>
+      </div>
+      <div class="card card-newsletter">
+        <h3 class="card-title">También puedes suscribirte a mi newsletter de ventas B2B</h3>
+        <p>Si lo haces, recibirás contenido actualizado sobre ventas B2B en tu bandeja de entrada, dos veces al mes.</p>
+        <a href="https://ventasconsoniaferrent.substack.com/about" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Suscribirme</a>
+      </div>
+      <div class="card card-newsletter">
+        <h3 class="card-title">Conecta conmigo en LinkedIn</h3>
+        <p>Comparto ideas, aprendizajes y contenido sobre estrategia comercial, captación B2B y crecimiento con foco en ejecución.</p>
+        <a href="https://www.linkedin.com/in/soniaferrerrentero/" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Ir a LinkedIn</a>
+      </div>
     </div>
   </section>
 </main>
@@ -166,6 +192,7 @@
         <h4><a href="/recursos-de-ventas">Recursos de ventas</a></h4>
         <ul>
           <li><a href="/recursos-de-ventas">Todos los recursos de ventas</a></li>
+          <li><a href="/como-definir-icp-ventas-b2b">Plantilla ICP para Ventas B2B</a></li>
           <li><a href="/estrategia-de-ventas-y-growth">Estrategia de ventas y Growth B2B</a></li>
           <li><a href="/plan-de-ventas">Playbook de ventas B2B</a></li>
           <li><a href="/procesos-comerciales-y-automatizacion-de-ventas">Procesos y automatización de ventas</a></li>
