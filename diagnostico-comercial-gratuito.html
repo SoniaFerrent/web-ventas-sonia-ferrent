@@ -30,6 +30,9 @@
 {"@context":"https://schema.org","@type":"WebPage","name":"Diagnóstico Comercial Gratuito: descubre qué frena tus ventas","description":"Diagnóstico comercial B2B para detectar qué frena tus ventas e identificar tus principales áreas de mejora.","url":"https://www.ventasconsoniaferrent.com/diagnostico-comercial-gratuito","inLanguage":"es-ES"}
 </script>
 <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Diagnóstico Comercial Gratuito","description":"Herramienta gratuita de diagnóstico comercial B2B para detectar qué frena tus ventas e identificar las áreas prioritarias de mejora.","url":"https://www.ventasconsoniaferrent.com/diagnostico-comercial-gratuito","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requiere navegador web y JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"es-ES","publisher":{"@type":"Organization","name":"Ventas con Sonia Ferrent","url":"https://www.ventasconsoniaferrent.com/"}}
+</script>
+<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.ventasconsoniaferrent.com/"},{"@type":"ListItem","position":2,"name":"Recursos de ventas","item":"https://www.ventasconsoniaferrent.com/recursos-de-ventas"},{"@type":"ListItem","position":3,"name":"Diagnóstico Comercial Gratuito","item":"https://www.ventasconsoniaferrent.com/diagnostico-comercial-gratuito"}]}
 </script>
 <style>
@@ -478,7 +481,9 @@ const DC_AREA_PRIORITIES = {
       threshold: 33,
       title: "Define cuotas y KPIs de actividad",
       cta: "definir cuotas y KPIs de actividad para tu equipo",
-      desc: "Sin métricas claras, el equipo no sabe qué se espera de él y tú no puedes dirigir con criterio. Es urgente establecer cuotas realistas, KPIs de actividad y ratios de conversión objetivo para que cada persona sepa cómo contribuir al resultado y puedas detectar desvíos a tiempo."
+      ctaNoTeam: "definir KPIs comerciales que te ayuden a detectar antes los problemas de tu estrategia",
+      desc: "Sin métricas claras, el equipo no sabe qué se espera de él y tú no puedes dirigir con criterio. Es urgente establecer cuotas realistas, KPIs de actividad y ratios de conversión objetivo para que cada persona sepa cómo contribuir al resultado y puedas detectar desvíos a tiempo.",
+      descNoTeam: "Aunque hoy no tengas equipo de ventas, definir KPIs comerciales te ayudará a detectar antes qué parte de tu estrategia no está funcionando: captación, cualificación, seguimiento o cierre. Tener estas métricas claras te permitirá optimizar el proceso con más criterio, corregir antes los desvíos y minimizar costes al invertir solo en las acciones comerciales que realmente generan resultado."
     },
     {
       threshold: 66,
@@ -498,7 +503,7 @@ const DC_AREA_PRIORITIES = {
       threshold: 33,
       title: "Crea un sistema de captación predecible",
       cta: "crear un sistema de captación sistematizada y predecible",
-      desc: "Dependes demasiado del boca a boca o de contactos puntuales, y eso hace que el crecimiento sea difícil de predecir. Necesitas un sistema de generación de demanda que funcione con más independencia de tu red personal y que puedas medir, ajustar y escalar con criterio."
+      desc: "Dependes demasiado del boca a boca o de contactos puntuales, y eso hace que el crecimiento sea difícil de predecir. Necesitas un sistema de generación de demanda que funcione con más independencia de tu red personal y que puedas medir, ajustar y escalar con criterio. Por ejemplo, usando estrategias de venta en frío, creación de contenidos orgánicos, nurturing sistematizado con listas de e-mail, o estrategias de pago en buscadores o redes sociales."
     },
     {
       threshold: 66,
@@ -661,9 +666,18 @@ function dcGetPredefinedResults() {
     .filter((area) => area.max > 0)
     .sort((a, b) => a.pct - b.pct);
 
+  const hasSalesTeam = !(dcAnswers.q6 && dcAnswers.q6.na) && !(dcAnswers.q7 && dcAnswers.q7.na);
+
   const priorities = ranked.slice(0, 3).map((area) => {
     const rules = DC_AREA_PRIORITIES[area.id];
     const rule = rules.find((item) => area.pct <= item.threshold) || rules[rules.length - 1];
+    if (area.id === 'equipo' && rule.title === "Define cuotas y KPIs de actividad" && !hasSalesTeam) {
+      return {
+        title: rule.title,
+        cta: rule.ctaNoTeam || rule.cta,
+        desc: rule.descNoTeam || rule.desc
+      };
+    }
     return { title: rule.title, cta: rule.cta, desc: rule.desc };
   });
 
@@ -774,8 +788,31 @@ function dcStartQuiz() {
   dcRender();
 }
 
+const DC_NO_TEAM_LABEL = "N/A — No tengo equipo y no tengo planes de crearlo por el momento";
+
+function dcSyncNoTeamAnswers() {
+  const founderDependsOnNoTeam = dcAnswers.q3 && dcAnswers.q3.na;
+
+  if (founderDependsOnNoTeam) {
+    dcAnswers.q6 = { score: 0, label: DC_NO_TEAM_LABEL, na: true };
+    dcAnswers.q7 = { score: 0, label: DC_NO_TEAM_LABEL, na: true };
+    return;
+  }
+
+  if (dcAnswers.q6 && dcAnswers.q6.na && dcAnswers.q6.label === DC_NO_TEAM_LABEL) {
+    delete dcAnswers.q6;
+  }
+
+  if (dcAnswers.q7 && dcAnswers.q7.na && dcAnswers.q7.label === DC_NO_TEAM_LABEL) {
+    delete dcAnswers.q7;
+  }
+}
+
 function dcSelectOption(id, score, label, na) {
   dcAnswers[id] = { score, label, na: !!na };
+  if (id === 'q3') {
+    dcSyncNoTeamAnswers();
+  }
   dcRender();
   dcKeepQuizCentered();
 }
