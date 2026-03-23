@@ -48,11 +48,11 @@
 .lead a,.resources-section a:not(.btn),.cta-box p a{color:#f66f19;}
 .lead a:hover,.resources-section a:not(.btn):hover,.cta-box p a:hover{color:#de5f12;}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
-.card{border:1px solid #ececec;border-radius:14px;padding:18px;background:#fff;transition:border-color .2s,transform .15s,box-shadow .2s;}
+.card{border:1px solid #ececec;border-radius:14px;padding:18px;background:#fff;transition:border-color .2s,transform .15s,box-shadow .2s;display:flex;flex-direction:column;height:100%;}
 .card:hover{border-color:#f66f19;transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.06);}
 .card-title{font-size:16px;font-weight:700;color:#111;line-height:1.35;}
-.card p{margin-top:8px;font-size:13px;color:#666;line-height:1.6;max-width:none;}
-.card .btn{margin-top:12px;}
+.card p{margin-top:8px;font-size:13px;color:#666;line-height:1.6;max-width:none;flex:1;}
+.card .btn{margin-top:12px;width:auto;align-self:flex-start;}
 .card-newsletter{width:100%;padding:24px;}
 .connect-grid .card-newsletter{display:flex;flex-direction:column;height:100%;}
 .card-newsletter .card-title{font-size:16px;}
@@ -115,9 +115,10 @@
   <p class="lead">En esta sección encontrarás guías y contenidos prácticos sobre estrategia de ventas, generación de demanda y crecimiento comercial para empresas B2B. Son recursos pensados para ayudarte a entender mejor cómo estructurar tu proceso comercial, atraer más oportunidades y mejorar la conversión en tu embudo de ventas.</p>
 
   <section class="resources-section">
-    <h2>Plantillas de ventas B2B</h2>
-    <p>Recursos descargables para ayudarte a aterrizar decisiones comerciales con una estructura clara y accionable.</p>
+    <h2>Herramientas de ventas B2B</h2>
+    <p>Herramientas en línea y recursos descargables para ayudarte a aterrizar decisiones comerciales con una estructura clara y accionable.</p>
     <div class="grid">
+      <div class="card"><h3 class="card-title">[Herramienta gratuita] Diagnóstico Comercial B2B</h3><p>Detecta qué está frenando tus ventas, identifica tus áreas de mejora principales y empieza a priorizar cómo trabajarlas.</p><a href="/diagnostico-comercial-gratuito" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Abrir diagnóstico comercial</a></div>
       <div class="card"><h3 class="card-title">[Plantilla gratuita] Cómo definir tu Perfil de Cliente Ideal en ventas B2B</h3><p>Con esta plantilla práctica lograrás definir tu cliente ideal y activar tu estrategia comercial.</p><a href="/como-definir-icp-ventas-b2b" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Descubre la plantilla ICP</a></div>
     </div>
   </section>
@@ -242,6 +243,7 @@
         <h4><a href="/recursos-de-ventas">Recursos de ventas</a></h4>
         <ul>
           <li><a href="/recursos-de-ventas">Todos los recursos de ventas</a></li>
+          <li><a href="/diagnostico-comercial-gratuito">Diagnóstico Comercial B2B</a></li>
           <li><a href="/como-definir-icp-ventas-b2b">Plantilla ICP para Ventas B2B</a></li>
           <li><a href="/estrategia-de-ventas-y-growth">Estrategia de ventas y Growth B2B</a></li>
           <li><a href="/plan-de-ventas">Playbook de ventas B2B</a></li>
