@@ -1,5 +1,7 @@
 {
   "redirects": [
+    {"source": "/en.html", "destination": "/en", "permanent": true},
+    {"source": "/en/", "destination": "/en", "permanent": true},
     {"source": "/index.html", "destination": "/", "permanent": true},
     {"source": "/inicio", "destination": "/", "permanent": true},
     {"source": "/consultoria.html", "destination": "/consultoria-de-ventas", "permanent": true},
@@ -26,6 +28,7 @@
     {"source": "/aviso-legal.html", "destination": "/aviso-legal", "permanent": true}
   ],
   "rewrites": [
+    {"source": "/en", "destination": "/en.html"},
     {"source": "/consultoria-de-ventas", "destination": "/consultoria.html"},
     {"source": "/sonia-ferrer-rentero-consultora-de-ventas", "destination": "/sobre-mi.html"},
     {"source": "/contacto", "destination": "/contacto.html"},
