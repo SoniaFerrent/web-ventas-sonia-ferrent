@@ -64,7 +64,7 @@
 .pq-card p{font-size:15px;color:#444;line-height:1.75;margin-bottom:28px;text-align:center;}
 
 /* ── SERVICIOS ── */
-.srv-section{background:#FFF8F5;padding:clamp(64px,8vw,100px) clamp(16px,4vw,56px);}
+.srv-section{background:#fcf7f4;padding:clamp(64px,8vw,100px) clamp(16px,4vw,56px);}
 .srv-inner{max-width:1160px;margin:0 auto;}
 .srv-label{display:none;}
 .srv-title{font-size:clamp(24px,2.6vw,40px);font-weight:700;color:#1d1d1f;margin-bottom:14px;line-height:1.1;letter-spacing:-.02em;max-width:1160px;}
@@ -107,15 +107,17 @@
 .srv-pill{background:#F1F1F3;color:#1d1d1f;border:none;font-size:11px;font-weight:600;padding:6px 13px;border-radius:20px;letter-spacing:.01em;}
 
 /* ── CAROUSEL ── */
+.reviews-section{background:linear-gradient(135deg,#f8b46b 0%,#e86859 100%);padding-left:0;padding-right:0;}
+.reviews-section .section-title{color:#fff;}
 .carousel-outer{overflow:hidden;width:100%;padding:8px 0;}
 .carousel-track{display:flex;gap:24px;will-change:transform;}
-.tst-card{flex:0 0 340px;background:#fff;border:1.5px solid #e8e8e8;border-radius:12px;padding:28px 24px;transition:box-shadow .2s;}
-.tst-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.09);}
+.tst-card{flex:0 0 340px;background:#fff;border:1px solid rgba(255,255,255,.5);border-radius:12px;padding:28px 24px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(120,49,17,.14);transition:box-shadow .2s,transform .2s;}
+.tst-card:hover{box-shadow:0 14px 36px rgba(120,49,17,.2);transform:translateY(-2px);}
 .tst-avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;}
-.tst-name{font-size:15px;font-weight:700;text-align:center;margin-bottom:3px;}
-.tst-role{font-size:11px;text-align:center;color:#aaa;margin-bottom:8px;font-weight:500;}
+.tst-name{font-size:15px;font-weight:700;text-align:center;margin-bottom:3px;color:#1f1b18;}
+.tst-role{font-size:11px;text-align:center;color:#7f6c63;margin-bottom:8px;font-weight:600;}
 .tst-stars{text-align:center;font-size:14px;margin-bottom:12px;color:#f66f19;letter-spacing:2px;}
-.tst-text{font-size:13px;line-height:1.75;color:#555;text-align:center;}
+.tst-text{font-size:13px;line-height:1.75;color:#4f413b;text-align:center;}
 
 /* ── FAQ ── */
 .faq-section{background:#fff;padding:96px 0;}
@@ -177,7 +179,7 @@
 .resource-home-card--accent{background:linear-gradient(135deg,#fff7f1 0%,#fff 100%);border-color:#f3d4be;}
 
 /* ── SONIA ── */
-.sonia-section{background:#fff;padding:clamp(48px,5vw,72px) 56px;border-top:1px solid #f0f0f0;}
+.sonia-section{background:#fff;padding:clamp(64px,6vw,96px) 56px;border-top:1px solid #f0f0f0;}
 .sonia-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;grid-template-areas:"img content" "img cta";gap:0 56px;}
 .sonia-img-wrap{grid-area:img;align-self:center;}
 .sonia-content{grid-area:content;padding-bottom:0;}
@@ -214,6 +216,10 @@
   .cta-left{text-align:center;}
   .cta-left .btn{display:inline-block;}
   .form-grid{grid-template-columns:1fr;}
+}
+@media(min-width:901px){
+  .reviews-section{padding-top:108px;padding-bottom:108px;}
+  .reviews-section .section-title{text-align:center;font-weight:700;font-size:clamp(22px,2.5vw,36px);}
 }
 @media(max-width:480px){
   .pq-grid{grid-template-columns:1fr;}
@@ -418,7 +424,7 @@
 </section>
 
 <!-- TESTIMONIOS -->
-<section class="section" style="background:#f7f7f7;padding-left:0;padding-right:0;">
+<section class="section reviews-section">
   <div class="section-inner" style="padding:0 clamp(24px,4.8vw,56px) 36px;">
     <div class="section-title">¿Qué dicen mis clientes?</div>
   </div>
