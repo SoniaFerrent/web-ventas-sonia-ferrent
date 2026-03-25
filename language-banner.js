@@ -65,7 +65,7 @@
   }
 
   async function initBanner() {
-    const show = shouldShowForLanguage() || (await shouldShowForCountry());
+    const show = shouldShowForLanguage() && (await shouldShowForCountry());
     if (show) showBanner();
   }
 
