@@ -48,8 +48,8 @@
 .lead a,.resources-section a:not(.btn),.cta-box p a{color:#f66f19;}
 .lead a:hover,.resources-section a:not(.btn):hover,.cta-box p a:hover{color:#de5f12;}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
-.card{border:1px solid #ececec;border-radius:14px;padding:18px;background:#fff;transition:border-color .2s,transform .15s,box-shadow .2s;display:flex;flex-direction:column;height:100%;}
-.card:hover{border-color:#f66f19;transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.06);}
+.card{border:1px solid transparent;border-radius:14px;padding:18px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#f59118 0%,#da1200 100%) border-box;transition:transform .15s,box-shadow .2s;display:flex;flex-direction:column;height:100%;}
+.card:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.06);}
 .card-title{font-size:16px;font-weight:700;color:#111;line-height:1.35;}
 .card p{margin-top:8px;font-size:13px;color:#666;line-height:1.6;max-width:none;flex:1;}
 .card .btn{margin-top:12px;width:auto;align-self:flex-start;}
@@ -58,13 +58,15 @@
 .card-newsletter .card-title{font-size:16px;}
 .card-newsletter p{font-size:13px;}
 .connect-grid .card-newsletter p{flex:1;}
-.card-newsletter .btn{background:#111;border-color:#111;color:#fff;}
-.card-newsletter .btn:hover{background:#000;border-color:#000;}
+.connect-grid .card-newsletter.resource-cta-box{padding:24px;border:none;box-shadow:0 18px 48px rgba(167,52,5,.2);}
+.connect-grid .card-newsletter.resource-cta-box:hover{border:none;box-shadow:0 22px 52px rgba(167,52,5,.24);}
+.connect-grid .card-newsletter.resource-cta-box .btn{background:#111;border-color:#111;color:#fff;}
+.connect-grid .card-newsletter.resource-cta-box .btn:hover{background:#000;border-color:#000;}
 .connect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px;}
 .cta-box{margin-top:-12px;padding:24px;border:1px solid #ececec;border-radius:14px;background:#fafafa;}
 .cta-box p{font-size:15px;color:#555;line-height:1.85;margin-bottom:16px;}
 .glossary-list{display:grid;gap:14px;margin-top:18px;}
-.glossary-item{padding:20px 22px;border:1px solid #ececec;border-radius:14px;background:#fff;}
+.glossary-item{padding:20px 22px;border:1px solid transparent;border-radius:14px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#f59118 0%,#da1200 100%) border-box;}
 .glossary-item h3{font-size:16px;font-weight:700;line-height:1.4;color:#111;margin-bottom:8px;}
 .glossary-item p{margin:0;font-size:14px;line-height:1.8;color:#555;max-width:none;}
 @media(max-width:900px){
@@ -140,7 +142,7 @@
     </div>
   </section>
 
-  <div class="cta-box">
+  <div class="cta-box resource-cta-box">
     <p>Si quieres aplicar estos recursos a tu caso concreto, puedo ayudarte a priorizar las acciones con más impacto para tu empresa y tu momento de crecimiento.</p>
     <a href="/contacto" class="btn btn-orange">Consúltame sin compromiso</a>
   </div>
@@ -195,20 +197,20 @@
     <h2>Conectemos</h2>
     <p>Si quieres seguir aprendiendo, reservar una conversación o estar al día de nuevos recursos, aquí tienes tres formas rápidas de hacerlo.</p>
     <div class="connect-grid">
-      <div class="card card-newsletter">
+      <div class="card card-newsletter resource-cta-box">
         <h3 class="card-title">Reserva 30 minutos conmigo</h3>
         <p>Cuéntame en qué punto está tu estrategia comercial y veamos juntos dónde desbloquear más tracción en tus ventas B2B.</p>
-        <a href="https://calendar.app.google/dxRHFujTJHW19EMg6" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Agendar llamada</a>
+        <a href="https://calendar.app.google/dxRHFujTJHW19EMg6" target="_blank" rel="noopener noreferrer" class="btn btn-black">Agendar llamada</a>
       </div>
-      <div class="card card-newsletter">
+      <div class="card card-newsletter resource-cta-box">
         <h3 class="card-title">También puedes suscribirte a mi newsletter de ventas B2B</h3>
         <p>Si lo haces, recibirás contenido actualizado sobre ventas B2B en tu bandeja de entrada, dos veces al mes.</p>
-        <a href="https://ventasconsoniaferrent.substack.com/about" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Suscribirme</a>
+        <a href="https://ventasconsoniaferrent.substack.com/about" target="_blank" rel="noopener noreferrer" class="btn btn-black">Suscribirme</a>
       </div>
-      <div class="card card-newsletter">
+      <div class="card card-newsletter resource-cta-box">
         <h3 class="card-title">Conecta conmigo en LinkedIn</h3>
         <p>Comparto ideas, aprendizajes y contenido sobre estrategia comercial, captación B2B y crecimiento con foco en ejecución.</p>
-        <a href="https://www.linkedin.com/in/soniaferrerrentero/" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Ir a LinkedIn</a>
+        <a href="https://www.linkedin.com/in/soniaferrerrentero/" target="_blank" rel="noopener noreferrer" class="btn btn-black">Ir a LinkedIn</a>
       </div>
     </div>
   </section>

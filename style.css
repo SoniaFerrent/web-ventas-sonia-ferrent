@@ -25,6 +25,14 @@ a{text-decoration:none;}
 .btn:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.18);}
 .btn-black{background:#000;color:#fff;}
 .btn-orange{background:#f66f19;color:#fff;}
+.resource-cta-box{background:linear-gradient(135deg,#f59118 0%,#da1200 100%)!important;border:none!important;box-shadow:0 18px 48px rgba(167,52,5,.2);}
+.resource-cta-box h2{color:#2B160B!important;}
+.resource-cta-box .card-title{color:#2B160B!important;}
+.resource-cta-box p{color:rgba(43,22,11,.92)!important;}
+.resource-cta-box a:not(.btn){color:#2B160B!important;text-decoration:underline;}
+.resource-cta-box a:not(.btn):hover{color:#2B160B!important;opacity:.75;}
+.resource-cta-box .btn-orange{background:#fff;color:#111;}
+.resource-cta-box .btn-black{background:#111;color:#fff;}
 
 footer{background:#111;padding:52px 56px 32px;}
 .footer-inner{max-width:1160px;margin:0 auto;}
