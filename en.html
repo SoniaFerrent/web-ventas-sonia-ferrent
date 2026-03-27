@@ -160,18 +160,29 @@ img{max-width:100%;display:block;}
   transition:transform .18s ease, box-shadow .18s ease;
   white-space:nowrap;
 }
-.hero-kpis{display:flex;justify-content:center;gap:0;margin:0 0 36px;opacity:0;transform:translateY(12px);transition:opacity .8s ease .3s,transform .8s ease .3s;}
+.hero-kpis{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 0 36px;opacity:0;transform:translateY(12px);transition:opacity .8s ease .3s,transform .8s ease .3s;}
 .hero-kpis.visible{opacity:1;transform:translateY(0);}
-.hero-kpi{padding:0 24px;text-align:center;}
-.hero-kpi:not(:last-child){border-right:1px solid rgba(255,255,255,.35);}
-.hero-kpi-num{font-size:clamp(18px,2.2vw,28px);font-weight:400;color:#fff;line-height:1;letter-spacing:-0.02em;}
-.hero-kpi-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.8);margin-top:4px;letter-spacing:.02em;}
+.hero-kpi{min-width:160px;padding:14px 18px;text-align:center;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);}
+.hero-kpi-num{font-size:clamp(18px,2.2vw,28px);font-weight:600;color:#fff;line-height:1;letter-spacing:-0.02em;}
+.hero-kpi-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.82);margin-top:5px;letter-spacing:.04em;text-transform:uppercase;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 .hero-tagline{
   margin:26px 0 0;
   font-size:14px;
   font-style:italic;
   color:rgba(255,255,255,.86);
 }
+.logos-strip{
+  background:#fcf7f4;
+  padding:34px 56px;
+}
+.logos-strip-inner{max-width:1160px;margin:0 auto;display:grid;gap:18px;}
+.logos-strip-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a36a49;text-align:center;}
+.logos-strip-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px;align-items:center;padding:18px 0;}
+.logos-strip-item{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0;}
+.logos-strip-item img{max-width:100%;width:auto;max-height:48px;height:auto;display:block;opacity:1;filter:none;}
+.logos-strip-item img.logo-andy{max-height:40px;}
+.logos-strip-item img.logo-stockcrowd{border-radius:10px;}
 .pain-grid,.audience-grid,.services-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -179,7 +190,7 @@ img{max-width:100%;display:block;}
   margin-top:42px;
 }
 .pain-section{
-  background:var(--orange-soft);
+  background:linear-gradient(135deg,#f8b46b 0%,#e86859 100%);
 }
 .pain-card{
   background:#FAFAFA;
@@ -254,7 +265,7 @@ img{max-width:100%;display:block;}
   box-shadow:0 24px 48px rgba(246,111,25,.2);
 }
 .audience{
-  background:var(--orange-soft);
+  background:linear-gradient(135deg,#fce6d1 0%,#f7cdb8 100%);
 }
 .audience-card{
   background:var(--white);
@@ -495,6 +506,10 @@ img{max-width:100%;display:block;}
   .hero{padding-top:24px;padding-bottom:80px;}
   .hero-inner{min-height:auto;}
   .en-section{padding:72px 20px;}
+  .logos-strip{padding:24px;}
+  .logos-strip-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 6px;}
+  .logos-strip-item{min-height:46px;flex:0 1 calc(25% - 6px);}
+  .logos-strip-item img{max-height:32px;}
   .credibility-image{max-width:520px;}
   .services-note{flex-direction:column;align-items:flex-start;}
   .cta-form-wrap{padding:32px 24px;}
@@ -509,10 +524,15 @@ img{max-width:100%;display:block;}
   .pain-card,.audience-card,.service-card,.tst-card{padding:24px 20px;}
   .tst-card{flex-basis:300px;}
   .en-footer{padding:24px 16px;}
-  .hero-kpis{gap:0;flex-wrap:nowrap;margin-bottom:28px;}
-  .hero-kpi{width:auto;padding:0 10px;}
-  .hero-kpi-num{font-size:17px;}
-  .hero-kpi-label{font-size:8px;letter-spacing:0;}
+  .hero-kpis{gap:6px;flex-wrap:nowrap;margin-bottom:28px;}
+  .hero-kpi{min-width:0;flex:1 1 0;padding:11px 6px;border-radius:20px;}
+  .hero-kpi-num{font-size:15px;}
+  .hero-kpi-label{font-size:7px;letter-spacing:.02em;}
+  .logos-strip-grid{gap:8px 4px;}
+  .logos-strip-item{min-height:42px;flex-basis:calc(25% - 4px);}
+  .logos-strip-item img{max-height:28px;}
+  .logos-strip-item:nth-child(-n+4) img{max-height:31px;}
+  .logos-strip-item img.logo-andy{max-height:24px;}
   .en-hero-cta{width:auto;}
   .en-cta,.services-talk-btn{width:100%;}
   .form-grid{grid-template-columns:1fr;}
@@ -546,13 +566,52 @@ img{max-width:100%;display:block;}
       <div class="hero-content">
         <h1 class="en-title">I help B2B startups scale sales across European markets.</h1>
         <div class="hero-kpis" id="hero-kpis">
-          <div class="hero-kpi"><div class="hero-kpi-num kpi-n1">0+</div><div class="hero-kpi-label">Businesses boosted</div></div>
-          <div class="hero-kpi"><div class="hero-kpi-num kpi-n2">+0</div><div class="hero-kpi-label">Processes implemented</div></div>
-          <div class="hero-kpi"><div class="hero-kpi-num kpi-n3">0+</div><div class="hero-kpi-label">People trained</div></div>
-          <div class="hero-kpi"><div class="hero-kpi-num kpi-n4">+0</div><div class="hero-kpi-label">Markets worked</div></div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" aria-label="35 or more">
+              <span class="sr-only">35+</span>
+              <span class="kpi-count kpi-n1" aria-hidden="true" data-target="35" data-prefix="" data-suffix="+">0+</span>
+            </div>
+            <div class="hero-kpi-label">Businesses boosted</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" aria-label="More than 190">
+              <span class="sr-only">+190</span>
+              <span class="kpi-count kpi-n2" aria-hidden="true" data-target="190" data-prefix="+" data-suffix="">+0</span>
+            </div>
+            <div class="hero-kpi-label">Processes implemented</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" aria-label="220 or more">
+              <span class="sr-only">220+</span>
+              <span class="kpi-count kpi-n3" aria-hidden="true" data-target="220" data-prefix="" data-suffix="+">0+</span>
+            </div>
+            <div class="hero-kpi-label">People trained</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" aria-label="More than 9">
+              <span class="sr-only">+9</span>
+              <span class="kpi-count kpi-n4" aria-hidden="true" data-target="9" data-prefix="+" data-suffix="">+0</span>
+            </div>
+            <div class="hero-kpi-label">Markets worked</div>
+          </div>
         </div>
         <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1V3APcCNL9OusmWjwj7DdP4_BmbWH_gYbuBxa0KzsXOSt-LL0VxUoHKjXAMr6XkiVA0vbsqHcM" target="_blank" rel="noopener noreferrer" class="en-hero-cta">Book a free 30-min call</a>
         <p class="hero-tagline">Learn more at ventasconsoniaferrent.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos-strip" aria-label="Clients">
+    <div class="logos-strip-inner">
+      <p class="logos-strip-label">Teams that already trusted me</p>
+      <div class="logos-strip-grid">
+        <div class="logos-strip-item"><img src="Images/factorial.webp" alt="Factorial logo" loading="lazy"></div>
+        <div class="logos-strip-item"><img src="Images/evolmind.webp" alt="EvolMind logo" loading="lazy"></div>
+        <div class="logos-strip-item"><img src="Images/neuraltrust.webp" alt="NeuralTrust logo" loading="lazy"></div>
+        <div class="logos-strip-item"><img src="Images/shakers.webp" alt="Shakers logo" loading="lazy"></div>
+        <div class="logos-strip-item"><img src="Images/andyapp.webp" alt="Andyapp logo" loading="lazy" class="logo-andy"></div>
+        <div class="logos-strip-item"><img src="Images/stockcrowd.webp" alt="StockCrowd logo" loading="lazy" class="logo-stockcrowd"></div>
+        <div class="logos-strip-item"><img src="Images/trainingym.webp" alt="Trainingym logo" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -962,10 +1021,15 @@ img{max-width:100%;display:block;}
     kpis.classList.add('visible');
 
     setTimeout(() => {
-      animateCounter(document.querySelector('.kpi-n1'), 35, '', '+', 700);
-      animateCounter(document.querySelector('.kpi-n2'), 190, '+', '', 700);
-      animateCounter(document.querySelector('.kpi-n3'), 220, '', '+', 700);
-      animateCounter(document.querySelector('.kpi-n4'), 9, '+', '', 500);
+      document.querySelectorAll('.kpi-count').forEach((el) => {
+        animateCounter(
+          el,
+          Number(el.dataset.target),
+          el.dataset.prefix || '',
+          el.dataset.suffix || '',
+          el.classList.contains('kpi-n4') ? 500 : 700
+        );
+      });
     }, 150);
   }, 800);
 })();

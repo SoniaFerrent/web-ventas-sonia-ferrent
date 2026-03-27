@@ -31,12 +31,13 @@
 </script>
 <style>
 /* PAGE LAYOUT */
+.about-page{background:#fff;}
 .page{max-width:1100px;margin:0 auto;padding:88px 56px 96px;}
 
 /* INTRO: nombre + foto + experiencia */
 .intro{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start;}
 .intro-left{}
-.intro-name{font-size:clamp(20px,2vw,30px);font-weight:400;color:#000;line-height:1.15;margin-bottom:56px;}
+.intro-name{font-size:clamp(20px,2vw,30px);font-weight:700;color:#000;line-height:1.15;margin-bottom:56px;}
 .intro-name-sep{}
 .intro-name-sub{}
 .intro-img{width:100%;height:auto;border-radius:20px;display:block;}
@@ -54,7 +55,7 @@
 .porque-lead{font-size:15px;color:#666;line-height:1.8;max-width:760px;}
 .porque-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px;}
 .porque-card{background:#fff;border:1px solid #f8d9c4;border-radius:18px;padding:22px 20px;box-shadow:0 8px 24px rgba(0,0,0,.04);transition:transform .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease;}
-.porque-card:hover{transform:translateY(-2px) scale(1.02);background:linear-gradient(135deg,#f66f19 0%,#eb2411 100%);border-color:#f66f19;box-shadow:0 14px 30px rgba(0,0,0,.14);}
+.porque-card:hover{transform:translateY(-2px) scale(1.02);background:linear-gradient(135deg,#ee7a4d 0%,#f29a5f 50%,#f6bd86 100%);border-color:#f29a5f;box-shadow:0 14px 30px rgba(120,49,17,.18);}
 .porque-card:hover .porque-card-title{color:#fff;}
 .porque-card:hover .porque-card-text{color:rgba(255,255,255,.9);}
 .porque-card-title{font-size:15px;font-weight:700;color:#111;line-height:1.45;margin-bottom:10px;}
@@ -133,7 +134,7 @@
 }
 </style>
 </head>
-<body>
+<body class="about-page">
 
 <!-- NAV -->
 <nav class="nav">
