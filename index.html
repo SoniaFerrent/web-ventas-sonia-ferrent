@@ -12,7 +12,9 @@
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/Images/backgound-image.jpg" fetchpriority="high"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <meta name="description" content="Sonia Ferrer Rentero, consultora de ventas B2B para Startups y PYMEs. Diseño la estrategia comercial para aumentar tus ventas: captación de clientes, playbook de ventas y formación comercial."/>
 <link rel="canonical" href="https://www.ventasconsoniaferrent.com/"/>
 <meta property="og:type" content="website"/>
@@ -33,8 +35,11 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo construir un plan de ventas B2B?","acceptedAnswer":{"@type":"Answer","text":"Un plan de ventas B2B eficaz comienza definiendo el perfil de cliente ideal, el proceso de captación de clientes y los indicadores comerciales clave. En mi consultoría de ventas, el plan suele construirse en varias fases según vuestras necesidades y punto de partida: diagnóstico de la situación comercial y análisis del mercado, definición del cliente objetivo y propuesta de valor, diseño del embudo de ventas y estrategia de generación de demanda, definición de procesos comerciales y herramientas de ventas, validación de la estrategia comercial con primeras acciones de captación y formación comercial al equipo de ventas. Una vez conozca el contexto y los objetivos de crecimiento de tu empresa, puedo ayudarte a diseñar un plan de ventas claro, accionable y completamente adaptado a vosotros."}},{"@type":"Question","name":"¿Qué procesos de automatización de ventas puedo implementar?","acceptedAnswer":{"@type":"Answer","text":"Las automatizaciones comerciales permiten generar más oportunidades de venta y gestionar el pipeline de forma más eficiente sin aumentar el esfuerzo del equipo. Dependiendo del punto de partida de cada empresa, algunas de las automatizaciones más útiles suelen ser la captura y enriquecimiento automático de leads en medios orgánicos o de pago, la prospección multicanal automatizada, el lead scoring y la segmentación automática, la asignación automática de leads al vendedor adecuado según territorio o tipo de cliente, las secuencias de seguimiento automático tras reuniones, demos o envío de propuestas, las alertas cuando un lead muestra interés y la actualización automática del embudo de ventas a partir de emails, reuniones o llamadas. En una consultoría de ventas analizamos vuestro proceso actual y definimos qué automatizaciones tienen más impacto según vuestro mercado, equipo y fase de crecimiento."}},{"@type":"Question","name":"¿Cuál es la mejor forma de aumentar ventas sin contratar más comerciales?","acceptedAnswer":{"@type":"Answer","text":"La eficiencia comercial. En la mayoría de PYMEs y Startups con las que trabajo, el problema no es la falta de comerciales sino la falta de procesos. Sin un manual de ventas claro, cada vendedor trabaja de forma independiente, sin un sistema claro. Optimizando vuestro embudo de ventas, el discurso y el seguimiento de oportunidades, he conseguido incrementos de conversión del 30 al 50 por ciento sin aumentar el equipo."}},{"@type":"Question","name":"¿Cuándo necesita una startup un playbook de ventas?","acceptedAnswer":{"@type":"Answer","text":"Una startup empieza a beneficiarse de la creación de un playbook de ventas escalable desde el momento en el que más de una persona vende, o en el que el fundador quiere dejar de ser el único que cierra. Si el proceso comercial solo existe en la cabeza de quien fundó la empresa, el negocio no puede escalar: cada incorporación al equipo empieza desde cero, el mensaje varía según quien habla y los resultados dependen del individuo. El playbook de ventas se convierte entonces en esa herramienta que implementa las mejores prácticas de ventas y convierte la forma de vender que ya funciona en un proceso repetible."}},{"@type":"Question","name":"¿Cómo es la primera llamada?","acceptedAnswer":{"@type":"Answer","text":"Es un diagnóstico de 30 minutos sin compromiso. Me cuentas tu situación actual, tus objetivos y tus mayores retos comerciales. Al finalizar, tengo muy claro si puedo ayudarte y cómo. Si encajamos, te propongo un plan de trabajo concreto."}}]}
 </script>
 <style>
-.hero{min-height:100vh;min-height:100svh;background-image:url('Images/backgound-image.jpg');background-size:cover;background-position:center;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:112px 48px 72px;}
-.hero-content{max-width:860px;padding-top:clamp(44px,10vh,112px);}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:112px 48px 72px;overflow:hidden;background:#c96b4a;}
+.hero-media{position:absolute;inset:0;z-index:0;}
+.hero-media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.03);}
+.hero-bg{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(1.06);}
+.hero-content{position:relative;z-index:1;max-width:860px;padding-top:clamp(44px,10vh,112px);}
 .hero-tagline{font-size:clamp(22px,2.6vw,38px);font-weight:500;color:white;line-height:1.15;margin-bottom:20px;}
 .hero h1{font-size:clamp(26px,3.2vw,50px);font-weight:800;color:white;line-height:1.2;margin-bottom:64px;opacity:0;transform:translateY(24px) scale(.97);filter:blur(6px);transition:opacity 1.1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1),filter 1s ease;}
 .hero h1.visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
@@ -45,7 +50,7 @@
 .hero-kpis.visible{opacity:1;transform:translateY(0);}
 .hero-kpi{min-width:160px;padding:14px 18px;text-align:center;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);}
 .hero-kpi-num{font-size:clamp(18px,2.2vw,28px);font-weight:600;color:#fff;line-height:1;letter-spacing:-0.02em;}
-.hero-kpi-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.82);margin-top:5px;letter-spacing:.04em;text-transform:uppercase;}
+.hero-kpi-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.94);margin-top:5px;letter-spacing:.04em;text-transform:uppercase;}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 .logos-strip{background:#fcf7f4;padding:34px 56px;}
 .logos-strip-inner{max-width:1160px;margin:0 auto;display:grid;gap:18px;}
@@ -83,7 +88,7 @@
 .srv-inner{max-width:1160px;margin:0 auto;}
 .srv-label{display:none;}
 .srv-title{font-size:clamp(24px,2.6vw,40px);font-weight:700;color:#1d1d1f;margin-bottom:14px;line-height:1.1;letter-spacing:-.02em;max-width:1160px;}
-.srv-sub{font-size:17px;color:#6e6e73;margin-bottom:56px;max-width:1160px;line-height:1.6;font-weight:400;}
+.srv-sub{font-size:17px;color:#5e5e64;margin-bottom:56px;max-width:1160px;line-height:1.6;font-weight:400;}
 .srv-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(16px,3vw,56px);align-items:start;}
 .srv-panels{min-width:0;display:grid;}
 .srv-tabs-col{min-width:0;display:flex;flex-direction:column;align-items:flex-start;}
@@ -113,7 +118,7 @@
   min-width:0;width:100%;box-sizing:border-box;
 }
 .srv-panel.active{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .3s ease,transform .3s ease,visibility 0s 0s;}
-.srv-panel h2{font-size:clamp(16px,1.7vw,21px);font-weight:700;color:#1d1d1f;margin-bottom:10px;letter-spacing:-.01em;}
+.srv-panel h2,.srv-panel h3{font-size:clamp(16px,1.7vw,21px);font-weight:700;color:#1d1d1f;margin-bottom:10px;letter-spacing:-.01em;}
 .srv-panel p{font-size:clamp(13px,1.3vw,15px);color:#6e6e73;line-height:1.75;margin-bottom:16px;}
 .srv-infographic{margin-bottom:16px;display:flex;justify-content:center;width:100%;}
 .srv-infographic canvas{display:block;width:100%;height:auto;max-height:220px;object-fit:contain;}
@@ -130,7 +135,7 @@
 .tst-card:hover{box-shadow:0 14px 36px rgba(120,49,17,.2);transform:translateY(-2px);}
 .tst-avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;}
 .tst-name{font-size:15px;font-weight:700;text-align:center;margin-bottom:3px;color:#1f1b18;}
-.tst-role{font-size:11px;text-align:center;color:#7f6c63;margin-bottom:8px;font-weight:600;}
+.tst-role{font-size:11px;text-align:center;color:#65524a;margin-bottom:8px;font-weight:600;}
 .tst-stars{text-align:center;font-size:14px;margin-bottom:12px;color:#f66f19;letter-spacing:2px;}
 .tst-text{font-size:13px;line-height:1.75;color:#4f413b;text-align:center;}
 
@@ -182,7 +187,7 @@
 .diagnosis-banner{background:#fff;padding:48px 56px;}
 .diagnosis-banner-inner{max-width:1160px;margin:0 auto;border-radius:24px;padding:32px clamp(24px,4vw,40px);display:flex;justify-content:space-between;align-items:center;gap:24px;background:linear-gradient(135deg,#f8b46b 0%,#e86859 100%);box-shadow:0 18px 48px rgba(167,52,5,.12);}
 .diagnosis-banner-copy h2{font-size:clamp(22px,2.4vw,34px);font-weight:700;line-height:1.15;color:#fff;margin-bottom:10px;}
-.diagnosis-banner-copy p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.9);max-width:720px;}
+.diagnosis-banner-copy p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.96);max-width:720px;}
 .diagnosis-banner .btn{flex-shrink:0;}
 
 /* ── RECURSOS ── */
@@ -201,10 +206,10 @@
 /* ── SONIA ── */
 .sonia-section{background:#fff;padding:clamp(64px,6vw,96px) 56px;border-top:1px solid #f0f0f0;}
 .sonia-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;grid-template-areas:"img content" "img cta";gap:0 56px;}
-.sonia-img-wrap{grid-area:img;align-self:center;}
+.sonia-img-wrap{grid-area:img;align-self:center;aspect-ratio:1/1;overflow:hidden;border-radius:12px;}
 .sonia-content{grid-area:content;padding-bottom:0;}
 .sonia-cta{grid-area:cta;}
-.sonia-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top;border-radius:12px;display:block;}
+.sonia-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .sonia-content h2{font-size:clamp(22px,2.3vw,34px);font-weight:600;margin-bottom:20px;line-height:1.2;}
 .sonia-content p{font-size:15px;color:#444;line-height:1.8;margin-bottom:20px;}
 
@@ -301,8 +306,12 @@
   </nav>
 </nav>
 
+<main id="main-content">
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <img src="Images/backgound-image.jpg" alt="" class="hero-bg" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async"/>
+  </div>
   <div class="hero-content">
     <p class="hero-tagline">¿Mucho esfuerzo y pocas ventas?</p>
     <h1 id="hero-h1">Te ayudo a que tu cliente ideal te descubra, te valore y te compre.</h1>
@@ -342,15 +351,16 @@
 
 <section class="logos-strip" aria-label="Clientes">
   <div class="logos-strip-inner">
+    <h2 class="sr-only">Equipos que ya confiaron en mí</h2>
     <p class="logos-strip-label">Equipos que ya confiaron en mí</p>
     <div class="logos-strip-grid">
-      <div class="logos-strip-item"><img src="Images/factorial.webp" alt="Logo de Factorial" loading="lazy"></div>
-      <div class="logos-strip-item"><img src="Images/evolmind.webp" alt="Logo de EvolMind" loading="lazy"></div>
-      <div class="logos-strip-item"><img src="Images/neuraltrust.webp" alt="Logo de NeuralTrust" loading="lazy"></div>
-      <div class="logos-strip-item"><img src="Images/shakers.webp" alt="Logo de Shakers" loading="lazy"></div>
-      <div class="logos-strip-item"><img src="Images/andyapp.webp" alt="Logo de Andyapp" loading="lazy" class="logo-andy"></div>
-      <div class="logos-strip-item"><img src="Images/stockcrowd.webp" alt="Logo de StockCrowd" loading="lazy" class="logo-stockcrowd"></div>
-      <div class="logos-strip-item"><img src="Images/trainingym.webp" alt="Logo de Trainingym" loading="lazy"></div>
+      <div class="logos-strip-item"><img src="Images/factorial.webp" alt="Logo de Factorial" loading="lazy" decoding="async" width="946" height="880"></div>
+      <div class="logos-strip-item"><img src="Images/evolmind.webp" alt="Logo de EvolMind" loading="lazy" decoding="async" width="252" height="200"></div>
+      <div class="logos-strip-item"><img src="Images/neuraltrust.webp" alt="Logo de NeuralTrust" loading="lazy" decoding="async" width="500" height="500"></div>
+      <div class="logos-strip-item"><img src="Images/shakers.webp" alt="Logo de Shakers" loading="lazy" decoding="async" width="498" height="498"></div>
+      <div class="logos-strip-item"><img src="Images/andyapp.webp" alt="Logo de Andyapp" loading="lazy" decoding="async" class="logo-andy" width="1500" height="565"></div>
+      <div class="logos-strip-item"><img src="Images/stockcrowd.webp" alt="Logo de StockCrowd" loading="lazy" decoding="async" class="logo-stockcrowd" width="225" height="225"></div>
+      <div class="logos-strip-item"><img src="Images/trainingym.webp" alt="Logo de Trainingym" loading="lazy" decoding="async" width="250" height="100"></div>
     </div>
   </div>
 </section>
@@ -428,9 +438,9 @@
       <div class="srv-panels">
 <div class="srv-panel active" id="panel-0">
           <!-- Infografía: Captación (Gemini) -->
-          <h2>Sistema de Generación de Demanda</h2>
+          <h3>Sistema de Generación de Demanda</h3>
           <p>Construyo un sistema predecible que llena tu embudo de ventas con oportunidades cualificadas, combinando outbound, inbound y automatización inteligente.</p>
-          <div class="srv-infographic"><img src="Images/Sistema-de-captacion-b2b.webp" alt="Infografía de sistema de captación B2B para generar oportunidades comerciales" loading="lazy" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
+          <div class="srv-infographic"><img src="Images/Sistema-de-captacion-b2b.webp" alt="Infografía de sistema de captación B2B para generar oportunidades comerciales" loading="lazy" decoding="async" width="1536" height="1024" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
           <div class="srv-pill-row">
             <span class="srv-pill">Outbound &amp; Inbound</span>
             <span class="srv-pill">LinkedIn &amp; Email</span>
@@ -440,9 +450,9 @@
         </div>
 <div class="srv-panel" id="panel-1">
           <!-- Infografía: Playbook (Gemini) -->
-          <h2>Playbook de Ventas</h2>
+          <h3>Playbook de Ventas</h3>
           <p>Desde la generación de leads hasta el cierre de ventas, desarrollaré todos los procesos y metodologías comerciales que tu equipo y tú necesitáis para aumentar vuestras ventas.</p>
-          <div class="srv-infographic"><img src="Images/Playbook-de-Ventas-B2B.webp" alt="Infografía de playbook de ventas B2B con procesos comerciales y cierre" loading="lazy" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
+          <div class="srv-infographic"><img src="Images/Playbook-de-Ventas-B2B.webp" alt="Infografía de playbook de ventas B2B con procesos comerciales y cierre" loading="lazy" decoding="async" width="1536" height="1024" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
           <div class="srv-pill-row">
             <span class="srv-pill">Mensajes de Ventas</span>
             <span class="srv-pill">Gestión de objeciones</span>
@@ -453,9 +463,9 @@
         </div>
 <div class="srv-panel" id="panel-2">
           <!-- Infografía: Consultas 1:1 (Gemini) -->
-          <h2>Asesoría de Ventas 1:1</h2>
+          <h3>Asesoría de Ventas 1:1</h3>
           <p>Si buscas apoyo localizado con dudas, problemas u objetivos de ventas B2B, te ayudaré a superarlos en sesiones 100% personalizadas de 1h por videollamada.</p>
-          <div class="srv-infographic"><img src="Images/Mentoria-de-ventas-b2b.webp" alt="Infografía de asesoría de ventas B2B personalizada para resolver bloqueos comerciales" loading="lazy" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
+          <div class="srv-infographic"><img src="Images/Mentoria-de-ventas-b2b.webp" alt="Infografía de asesoría de ventas B2B personalizada para resolver bloqueos comerciales" loading="lazy" decoding="async" width="1536" height="1024" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
           <div class="srv-pill-row">
             <span class="srv-pill">Sesión 60 min</span>
             <span class="srv-pill">Videollamada</span>
@@ -465,9 +475,9 @@
           </div>
         </div>
 <div class="srv-panel" id="panel-3">
-          <h2>Formación comercial</h2>
+          <h3>Formación comercial</h3>
           <p>Formación práctica y personalizada para emprendedores y equipos que quieren aprender a vender mejor su producto o servicio, estructurar su proceso comercial y generar más oportunidades de negocio.</p>
-          <div class="srv-infographic"><img src="Images/Formacion-de-ventas-B2B.webp" alt="Infografía de formación comercial para emprendedores y pequeñas empresas" loading="lazy" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
+          <div class="srv-infographic"><img src="Images/Formacion-de-ventas-B2B.webp" alt="Infografía de formación comercial para emprendedores y pequeñas empresas" loading="lazy" decoding="async" width="1536" height="1024" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
           <div class="srv-pill-row">
             <span class="srv-pill">Cliente ideal</span>
             <span class="srv-pill">Propuesta de valor</span>
@@ -478,9 +488,9 @@
         </div>
 <div class="srv-panel" id="panel-4">
           <!-- Infografía: Acompañamiento -->
-          <h2>Acompañamiento Comercial</h2>
+          <h3>Acompañamiento Comercial</h3>
           <p>Ya sea si quieres lanzar un nuevo producto, abrir un nuevo mercado, dar apoyo extra a tu equipo, o simplemente aumentar tus ventas, acordaremos el tipo de proyecto o acompañamiento que mejor se adapte a tu caso.</p>
-          <div class="srv-infographic"><img src="Images/Fractional-Head-of-Sales.webp" alt="Infografía de acompañamiento comercial y liderazgo de ventas B2B" loading="lazy" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
+          <div class="srv-infographic"><img src="Images/Fractional-Head-of-Sales.webp" alt="Infografía de acompañamiento comercial y liderazgo de ventas B2B" loading="lazy" decoding="async" width="1536" height="1024" style="width:100%;height:auto;object-fit:contain;border-radius:8px;"/></div>
           <div class="srv-pill-row">
             <span class="srv-pill">A medida</span>
             <span class="srv-pill">Nuevos mercados</span>
@@ -499,7 +509,7 @@
 <section class="sonia-section">
   <div class="sonia-inner">
     <div class="sonia-img-wrap">
-      <img src="Images/Sonia-Ferrer-Consultora-de-ventas.jpg" alt="Sonia Ferrer Rentero, consultora de ventas B2B para startups y PYMEs" class="sonia-photo" loading="lazy">
+      <img src="Images/Sonia-Ferrer-Consultora-de-ventas.jpg" alt="Sonia Ferrer Rentero, consultora de ventas B2B para startups y PYMEs" class="sonia-photo" loading="lazy" decoding="async" width="800" height="788">
     </div>
     <div class="sonia-content">
       <h2>Sonia Ferrer Rentero</h2>
@@ -516,173 +526,89 @@
 <!-- TESTIMONIOS -->
 <section class="section reviews-section">
   <div class="section-inner" style="padding:0 clamp(24px,4.8vw,56px) 36px;">
-    <div class="section-title">¿Qué dicen mis clientes?</div>
+    <h2 class="section-title">¿Qué dicen mis clientes?</h2>
   </div>
   <div class="carousel-outer">
     <div class="carousel-track" id="carousel-track">
       <div class="tst-card">
-        <img src="Images/Javier-Perez-Evolmind.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Javier-Perez-Evolmind.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="400" height="400">
         <p class="tst-name">Javier Pérez</p>
         <p class="tst-role">CEO y Fundador · EvolMind</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Sonia enseguida comenzó a hacer las preguntas adecuadas. Se nota que ha estado en primera línea de ventas de alto nivel y su experiencia real es lo que le diferencia.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Paula-Terron-Shakers.jpg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Paula-Terron-Shakers.jpg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="512" height="512">
         <p class="tst-name">Paula Terrón</p>
         <p class="tst-role">SDR Manager · Shakers</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Tras 10 semanas de trabajo, hoy tenemos un equipo de ventas más profesional, con mejores conversaciones al teléfono, más conexión con el cliente y un uso más efectivo del social selling.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Rafa-Linan-Andy.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Rafa-Linan-Andy.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="400" height="400">
         <p class="tst-name">Rafa Liñán</p>
         <p class="tst-role">CEO y Fundador · Andy</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Ahora tenemos un PlayBook para crecer, con unas bases sólidas. Pocas personas tienen tanta experiencia acumulada, sumado a su trato amigable y motivador.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Joan-Vendrell-NeuralTrust.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Joan-Vendrell-NeuralTrust.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="675" height="675">
         <p class="tst-name">Joan Vendrell</p>
         <p class="tst-role">CEO y Co-Fundador · NeuralTrust</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Sonia nos ha ayudado a montar un equipo de ventas profesional que trabaje según las mejores prácticas, reduciendo la curva de aprendizaje.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Carlos-Gutierrez-Significa-Branding.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Carlos-Gutierrez-Significa-Branding.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="800" height="800">
         <p class="tst-name">Carlos Gutiérrez</p>
         <p class="tst-role">Director y Fundador · Significa Branding</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">He logrado clarificar, ordenar y enfocar todo mi proceso comercial. No solo gané eficiencia en los métodos, sino también una visión más nítida de mis objetivos.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/micaela-socci-wemoter.webp" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/micaela-socci-wemoter.webp" alt="" class="tst-avatar" loading="lazy" decoding="async" width="800" height="800">
         <p class="tst-name">Micaela Socci</p>
         <p class="tst-role">Fundadora · Wemoter</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Queríamos hacer nuestras primeras experiencias de cold calling. Conseguimos una estructura orientada a la práctica para realizar llamadas en frío, además de consejos sobre estrategias de venta y mindset.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Sergi-Pallares-Stockcrowd.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Sergi-Pallares-Stockcrowd.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="400" height="400">
         <p class="tst-name">Sergi Pallarès</p>
         <p class="tst-role">CEO y Co-Fundador · StockCrowd</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">El proceso de coaching con Sonia nos ayudó a mejorar la gestión de demos, el seguimiento de oportunidades y el tiempo de cierre. Su cercanía y forma de transmitir añadieron un plus de motivación al equipo.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Eduard-Rifa-Garem-Tech.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Eduard-Rifa-Garem-Tech.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="232" height="232">
         <p class="tst-name">Eduard Rifà</p>
         <p class="tst-role">CEO y Fundador · Garem Tech</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Sonia nos ayudó a desarrollar la estrategia comercial de un nuevo producto. Salimos con una base clara, práctica y alineada con nuestros objetivos que ya estamos ejecutando, también junto a Sonia.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Tomas-Colonel-Simphio.jpeg" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Tomas-Colonel-Simphio.jpeg" alt="" class="tst-avatar" loading="lazy" decoding="async" width="800" height="800">
         <p class="tst-name">Tomas Colonel</p>
         <p class="tst-role">Director y Fundador · Simphio</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">He cumplido ambos objetivos con creces y ya empiezo a notar los beneficios. Sonia, se nota que no lo haces solo por negocio, sino por una pasión genuina por ayudar. Ha sido un placer absoluto.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Pep-serra-Neurekalab.webp" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Pep-serra-Neurekalab.webp" alt="" class="tst-avatar" loading="lazy" decoding="async" width="200" height="200">
         <p class="tst-name">Pep Serra</p>
         <p class="tst-role">Co-Fundador · NeurekaLAB</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Queríamos aprender a automatizar nuestros flujos en HubSpot y lo logramos. Ahora ahorramos tiempo real en contacto y seguimiento con clientes.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/Sergi-grau-neurekalab.webp" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/Sergi-grau-neurekalab.webp" alt="" class="tst-avatar" loading="lazy" decoding="async" width="200" height="200">
         <p class="tst-name">Sergi Grau</p>
         <p class="tst-role">CEO y Co-Fundador · NeurekaLab</p>
         <p class="tst-stars">★★★★★</p>
         <p class="tst-text">Queríamos mejorar el playbook de ventas y automatizar y medir el pipeline. Hemos conseguido tener protocolizada la estrategia de ventas y ser capaces de medir el impacto que estamos generando.</p>
       </div>
       <div class="tst-card">
-        <img src="Images/juan-jesus-del-aguila-asesores.webp" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Juan Jesús del Águila</p>
-        <p class="tst-role">Gerente · Del Águila Asesores</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Queríamos organizar nuestra estructura de ventas y aprender a ofertar el servicio. Salimos con una política de precios definida y conociendo los canales adecuados para ofertarlo.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Javier-Perez-Evolmind.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Javier Pérez</p>
-        <p class="tst-role">CEO y Fundador · EvolMind</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Sonia enseguida comenzó a hacer las preguntas adecuadas. Se nota que ha estado en primera línea de ventas de alto nivel y su experiencia real es lo que le diferencia.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Paula-Terron-Shakers.jpg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Paula Terrón</p>
-        <p class="tst-role">SDR Manager · Shakers</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Tras 10 semanas de trabajo, hoy tenemos un equipo de ventas más profesional, con mejores conversaciones al teléfono, más conexión con el cliente y un uso más efectivo del social selling.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Rafa-Linan-Andy.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Rafa Liñán</p>
-        <p class="tst-role">CEO y Fundador · Andy</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Ahora tenemos un PlayBook para crecer, con unas bases sólidas. Pocas personas tienen tanta experiencia acumulada, sumado a su trato amigable y motivador.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Joan-Vendrell-NeuralTrust.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Joan Vendrell</p>
-        <p class="tst-role">CEO y Co-Fundador · NeuralTrust</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Sonia nos ha ayudado a montar un equipo de ventas profesional que trabaje según las mejores prácticas, reduciendo la curva de aprendizaje.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Carlos-Gutierrez-Significa-Branding.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Carlos Gutiérrez</p>
-        <p class="tst-role">Director y Fundador · Significa Branding</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">He logrado clarificar, ordenar y enfocar todo mi proceso comercial. No solo gané eficiencia en los métodos, sino también una visión más nítida de mis objetivos.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/micaela-socci-wemoter.webp" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Micaela Socci</p>
-        <p class="tst-role">Fundadora · Wemoter</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Queríamos hacer nuestras primeras experiencias de cold calling. Conseguimos una estructura orientada a la práctica para realizar llamadas en frío, además de consejos sobre estrategias de venta y mindset.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Sergi-Pallares-Stockcrowd.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Sergi Pallarès</p>
-        <p class="tst-role">CEO y Co-Fundador · StockCrowd</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">El proceso de coaching con Sonia nos ayudó a mejorar la gestión de demos, el seguimiento de oportunidades y el tiempo de cierre. Su cercanía y forma de transmitir añadieron un plus de motivación al equipo.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Eduard-Rifa-Garem-Tech.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Eduard Rifà</p>
-        <p class="tst-role">CEO y Fundador · Garem Tech</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Sonia nos ayudó a desarrollar la estrategia comercial de un nuevo producto. Salimos con una base clara, práctica y alineada con nuestros objetivos que ya estamos ejecutando, también junto a Sonia.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Tomas-Colonel-Simphio.jpeg" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Tomas Colonel</p>
-        <p class="tst-role">Director y Fundador · Simphio</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">He cumplido ambos objetivos con creces y ya empiezo a notar los beneficios. Sonia, se nota que no lo haces solo por negocio, sino por una pasión genuina por ayudar. Ha sido un placer absoluto.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Pep-serra-Neurekalab.webp" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Pep Serra</p>
-        <p class="tst-role">Co-Fundador · NeurekaLAB</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Queríamos aprender a automatizar nuestros flujos en HubSpot y lo logramos. Ahora ahorramos tiempo real en contacto y seguimiento con clientes.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/Sergi-grau-neurekalab.webp" alt="" class="tst-avatar" loading="lazy">
-        <p class="tst-name">Sergi Grau</p>
-        <p class="tst-role">CEO y Co-Fundador · NeurekaLab</p>
-        <p class="tst-stars">★★★★★</p>
-        <p class="tst-text">Queríamos mejorar el playbook de ventas y automatizar y medir el pipeline. Hemos conseguido tener protocolizada la estrategia de ventas y ser capaces de medir el impacto que estamos generando.</p>
-      </div>
-      <div class="tst-card">
-        <img src="Images/juan-jesus-del-aguila-asesores.webp" alt="" class="tst-avatar" loading="lazy">
+        <img src="Images/juan-jesus-del-aguila-asesores.webp" alt="" class="tst-avatar" loading="lazy" decoding="async" width="800" height="800">
         <p class="tst-name">Juan Jesús del Águila</p>
         <p class="tst-role">Gerente · Del Águila Asesores</p>
         <p class="tst-stars">★★★★★</p>
@@ -787,6 +713,7 @@
     <a href="/diagnostico-comercial-gratuito" class="btn btn-black">Hacer el diagnóstico</a>
   </div>
 </section>
+ </main>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -910,8 +837,11 @@ setTimeout(() => {
 // ── Carousel JS infinito ──
 (function() {
   const track = document.getElementById('carousel-track');
+  if (!track) return;
+  const originals = Array.from(track.children);
+  originals.forEach((card) => track.appendChild(card.cloneNode(true)));
   const cardW = 340 + 24;
-  const half = 12; // 12 tarjetas originales
+  const half = originals.length;
   let pos = 0;
   let paused = false;
   const speed = 0.56;
